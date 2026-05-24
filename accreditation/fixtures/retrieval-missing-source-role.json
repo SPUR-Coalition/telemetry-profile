@@ -1,0 +1,11 @@
+{
+  "_test_description": "A content_retrieved event with no 'source_role'. Retrieval conformance requires source_role on retrieval events, so the document reaches no tier.",
+  "_test_expected_tier": null,
+  "document_type": "event",
+  "schema_version": "0.1",
+  "event": {
+    "type": "content_retrieved",
+    "timestamp": "2026-05-22T10:00:01Z",
+    "content_url": "https://www.example-news.com/money/energy-tariffs"
+  }
+}

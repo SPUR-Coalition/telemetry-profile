@@ -1,0 +1,58 @@
+{
+  "_test_description": "Full retrieval-to-engagement lifecycle with turns at intent privacy and a classified citation. Meets Attribution conformance and the intent floor. Assessed Strategic partner.",
+  "_test_expected_tier": "strategic",
+  "document_type": "session",
+  "schema_version": "0.1",
+  "session_id": "a1b2c3d4-0009-4a00-8000-000000000009",
+  "agent_id": "research-assistant-v4",
+  "started_at": "2026-05-22T09:00:00Z",
+  "ended_at": "2026-05-22T09:06:00Z",
+  "events": [
+    {
+      "type": "turn_started",
+      "timestamp": "2026-05-22T09:00:00Z",
+      "turn_id": "1",
+      "turn": { "privacy_level": "intent", "query_intent": "comparison", "topics": ["energy tariffs"] }
+    },
+    {
+      "type": "content_retrieved",
+      "timestamp": "2026-05-22T09:00:01Z",
+      "source_role": "agent",
+      "content_telemetry_id": "770e8400-e29b-41d4-a716-446655440909",
+      "content_url": "https://www.example-news.com/money/energy-tariffs"
+    },
+    {
+      "type": "content_grounded",
+      "timestamp": "2026-05-22T09:00:02Z",
+      "content_url": "https://www.example-news.com/money/energy-tariffs",
+      "data": { "scope": "session", "cached": false, "tokens_ingested": 3100 }
+    },
+    {
+      "type": "content_cited",
+      "timestamp": "2026-05-22T09:00:05Z",
+      "turn_id": "1",
+      "content_url": "https://www.example-news.com/money/energy-tariffs",
+      "data": { "citation_type": "paraphrase", "position": "primary" }
+    },
+    {
+      "type": "content_displayed",
+      "timestamp": "2026-05-22T09:00:05Z",
+      "turn_id": "1",
+      "content_url": "https://www.example-news.com/money/energy-tariffs",
+      "data": { "display_type": "link" }
+    },
+    {
+      "type": "turn_completed",
+      "timestamp": "2026-05-22T09:00:05Z",
+      "turn_id": "1",
+      "turn": { "privacy_level": "intent", "response_type": "comparison", "response_mode": "standard" }
+    },
+    {
+      "type": "content_engaged",
+      "timestamp": "2026-05-22T09:02:00Z",
+      "turn_id": "1",
+      "content_url": "https://www.example-news.com/money/energy-tariffs",
+      "data": { "engagement_type": "link_click" }
+    }
+  ]
+}

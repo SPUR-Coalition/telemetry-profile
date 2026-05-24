@@ -1,0 +1,46 @@
+{
+  "_test_description": "Attribution-complete session, but a turn at intent privacy carries 'query_text', which the privacy levels forbid below summary. Attribution conformance fails on the gating rule (standard 5.7.3); the session is assessed at Preferred.",
+  "_test_expected_tier": "preferred",
+  "document_type": "session",
+  "schema_version": "0.1",
+  "session_id": "a1b2c3d4-0008-4a00-8000-000000000008",
+  "agent_id": "assistant-v2",
+  "started_at": "2026-05-22T10:00:00Z",
+  "events": [
+    {
+      "type": "content_retrieved",
+      "timestamp": "2026-05-22T10:00:01Z",
+      "source_role": "agent",
+      "content_url": "https://www.example-news.com/money/energy-tariffs"
+    },
+    {
+      "type": "content_grounded",
+      "timestamp": "2026-05-22T10:00:02Z",
+      "content_url": "https://www.example-news.com/money/energy-tariffs",
+      "data": { "scope": "session" }
+    },
+    {
+      "type": "turn_started",
+      "timestamp": "2026-05-22T10:00:03Z",
+      "turn_id": "1",
+      "turn": {
+        "privacy_level": "intent",
+        "query_text": "Should I switch my energy provider this year?",
+        "query_intent": "comparison"
+      }
+    },
+    {
+      "type": "content_cited",
+      "timestamp": "2026-05-22T10:00:07Z",
+      "turn_id": "1",
+      "content_url": "https://www.example-news.com/money/energy-tariffs",
+      "data": { "citation_type": "paraphrase", "position": "primary" }
+    },
+    {
+      "type": "turn_completed",
+      "timestamp": "2026-05-22T10:00:09Z",
+      "turn_id": "1",
+      "turn": { "privacy_level": "intent", "response_type": "comparison" }
+    }
+  ]
+}

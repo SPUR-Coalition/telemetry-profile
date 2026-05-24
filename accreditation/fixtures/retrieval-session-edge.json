@@ -1,0 +1,22 @@
+{
+  "_test_description": "Session document containing only retrieval events from a publisher's edge and origin. Meets Retrieval requirements; no grounding or turn events. Assessed Compliant.",
+  "_test_expected_tier": "compliant",
+  "document_type": "session",
+  "schema_version": "0.1",
+  "session_id": "a1b2c3d4-0002-4a00-8000-000000000002",
+  "started_at": "2026-05-22T10:00:00Z",
+  "events": [
+    {
+      "type": "content_retrieved",
+      "timestamp": "2026-05-22T10:00:01Z",
+      "source_role": "edge",
+      "content_url": "https://www.example-news.com/money/energy-tariffs"
+    },
+    {
+      "type": "content_retrieved",
+      "timestamp": "2026-05-22T10:00:02Z",
+      "source_role": "origin",
+      "content_url": "https://www.example-news.com/money/savings-rates"
+    }
+  ]
+}

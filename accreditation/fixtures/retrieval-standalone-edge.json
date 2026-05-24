@@ -1,0 +1,18 @@
+{
+  "_test_description": "Standalone edge retrieval event reported by a CDN. Meets Retrieval conformance with no session context. Assessed Compliant.",
+  "_test_expected_tier": "compliant",
+  "document_type": "event",
+  "schema_version": "0.1",
+  "event": {
+    "type": "content_retrieved",
+    "timestamp": "2026-05-22T10:00:01Z",
+    "source_role": "edge",
+    "content_telemetry_id": "770e8400-e29b-41d4-a716-446655440301",
+    "content_url": "https://www.example-news.com/money/energy-tariffs",
+    "data": {
+      "bot_category": "inference",
+      "cache_status": "miss",
+      "response_status": 200
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_test_description": "Session emits grounding and turn events at intent privacy, but the session document omits the required 'agent_id'. Grounding conformance fails on the baseline, so the session is assessed at Compliant despite clearing the privacy floor.",
+  "_test_expected_tier": "compliant",
+  "document_type": "session",
+  "schema_version": "0.1",
+  "session_id": "a1b2c3d4-0004-4a00-8000-000000000004",
+  "started_at": "2026-05-22T10:00:00Z",
+  "events": [
+    {
+      "type": "content_retrieved",
+      "timestamp": "2026-05-22T10:00:01Z",
+      "source_role": "agent",
+      "content_url": "https://www.example-news.com/money/energy-tariffs"
+    },
+    {
+      "type": "content_grounded",
+      "timestamp": "2026-05-22T10:00:02Z",
+      "content_url": "https://www.example-news.com/money/energy-tariffs",
+      "data": { "scope": "session" }
+    },
+    {
+      "type": "turn_started",
+      "timestamp": "2026-05-22T10:00:03Z",
+      "turn_id": "1",
+      "turn": { "privacy_level": "intent", "query_intent": "question" }
+    },
+    {
+      "type": "turn_completed",
+      "timestamp": "2026-05-22T10:00:08Z",
+      "turn_id": "1",
+      "turn": { "privacy_level": "intent" }
+    }
+  ]
+}
