@@ -14,7 +14,7 @@ The standard and the profile have different owners in the long run. The wire for
 
 - [PROFILE.md](./PROFILE.md) - the profile: tiers, privacy floor, behavioural commitments, conformance mark
 - [accreditation/](./accreditation/) - tier fixtures and assessment material
-- [LICENSE](./LICENSE) - Apache License 2.0
+- [LICENSE](./LICENSE) - Mozilla Public License 2.0
 
 ## The tiers at a glance
 

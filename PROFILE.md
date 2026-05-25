@@ -4,7 +4,7 @@ Publisher accreditation tiers for the SPUR Telemetry standard.
 
 **Version:** 0.1
 **Status:** Preview
-**Last updated:** 2026-05-22
+**Last updated:** 2026-05-25
 **Constrains:** SPUR Telemetry Specification, version 0.1
 
 ## Contents
@@ -201,7 +201,7 @@ A SPUR-accredited implementer may display the SPUR conformance mark for the tier
 - The mark refers to a specific version of this profile. An implementer reassessed against a later profile version updates the mark accordingly.
 - The SPUR Coalition may withdraw the right to display the mark from an implementer that no longer meets the tier.
 
-The conformance mark is a trademark of the SPUR Coalition. Permission to display it is granted through accreditation and is separate from the Apache 2.0 licence covering this document. The Apache licence does not grant any right to use the mark ([Apache License 2.0](./LICENSE), section 6).
+The conformance mark is a trademark of the SPUR Coalition. Permission to display it is granted through accreditation and is separate from the [Mozilla Public License 2.0](./LICENSE) that covers this document. The MPL does not grant any right to use the mark or other SPUR trademarks; that right is conveyed only through accreditation.
 
 Mark artwork and detailed display rules are published separately by the SPUR Coalition.
 
