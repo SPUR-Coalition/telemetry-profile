@@ -2,19 +2,19 @@
 
 ## What belongs here
 
-This repository contains the **profile** — accreditation tiers, the privacy floor, behavioural commitments, and the SPUR conformance mark. It does not contain the telemetry wire format. Changes to event types, schema, or conformance levels belong in the [standard repository](https://github.com/SPUR-Coalition/telemetry).
+This repository contains the **profile** - the requirements for the Compliant tier and the SPUR conformance mark. It does not contain the telemetry wire format. Changes to event types, schema, or conformance levels belong in the [standard repository](https://github.com/SPUR-Coalition/telemetry).
 
 | File | Purpose |
 |------|---------|
 | [PROFILE.md](./PROFILE.md) | The normative profile |
-| [accreditation/](./accreditation/) | Tier fixtures and assessment material |
+| [accreditation/](./accreditation/) | Example fixtures and assessment material |
 
 ## Proposing changes
 
-Tier definitions affect every accredited implementer. Before submitting a PR:
+The profile's requirements affect every accredited implementer. Before submitting a PR:
 
 1. Open an issue describing the change and its motivation.
-2. State which tier is affected and whether the change moves implementers between tiers.
+2. State which requirement is affected and whether the change moves implementers in or out of the Compliant tier.
 3. If the change depends on a new version of the standard, reference the standard issue or version.
 4. Update PROFILE.md and any affected fixtures in `accreditation/`.
 

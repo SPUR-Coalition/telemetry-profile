@@ -1,6 +1,6 @@
 {
-  "_test_description": "Full retrieval-to-engagement lifecycle with turns at intent privacy and a classified citation. Meets Attribution conformance and the intent floor. Assessed Strategic partner.",
-  "_test_expected_tier": "strategic",
+  "_test_description": "Full retrieval-to-engagement lifecycle from a Grounding/Attribution emitter. Meets Retrieval conformance (the profile's standard-conformance floor). Assessed Compliant.",
+  "_test_expected_tier": "compliant",
   "document_type": "session",
   "schema_version": "0.1",
   "session_id": "a1b2c3d4-0009-4a00-8000-000000000009",

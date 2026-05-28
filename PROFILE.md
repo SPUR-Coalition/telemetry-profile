@@ -1,10 +1,10 @@
 # SPUR Telemetry Profile
 
-Publisher accreditation tiers for the SPUR Telemetry standard.
+Publisher-facing requirements for the SPUR Telemetry standard.
 
 **Version:** 0.1
 **Status:** Preview
-**Last updated:** 2026-05-25
+**Last updated:** 2026-05-27
 **Constrains:** SPUR Telemetry Specification, version 0.1
 
 ## Contents
@@ -13,19 +13,20 @@ Publisher accreditation tiers for the SPUR Telemetry standard.
 2. [Normative references](#2-normative-references)
 3. [Terms and definitions](#3-terms-and-definitions)
 4. [Relationship to the SPUR Telemetry standard](#4-relationship-to-the-spur-telemetry-standard)
-5. [Accreditation tiers](#5-accreditation-tiers)
-6. [Privacy floor](#6-privacy-floor)
-7. [Conformance assessment](#7-conformance-assessment)
-8. [The SPUR conformance mark](#8-the-spur-conformance-mark)
-9. [Versioning](#9-versioning)
-
-[Annex A](#annex-a--tier-summary) (informative) — Tier summary
+5. [Requirements](#5-requirements)
+6. [Conformance assessment](#6-conformance-assessment)
+7. [The SPUR conformance mark](#7-the-spur-conformance-mark)
+8. [Versioning](#8-versioning)
 
 ## Introduction
 
-The SPUR Telemetry standard defines a wire format for reporting how AI agents use content: which content was retrieved, whether it was grounded, cited, displayed, and engaged with. The standard is permissive by design. It defines what a telemetry event may contain and what a conforming emitter must produce at each conformance level, but it does not say which level a given implementer should reach, or what an implementer commits to beyond producing well-formed events.
+The SPUR Telemetry standard defines a wire format for reporting how AI agents use content. The format is permissive: an emitter producing well-formed events at any conformance level is conforming to the standard.
 
-This profile is that layer. It defines three accreditation tiers for implementers that report content telemetry to SPUR member publishers, the privacy floor that applies at each tier, and the behavioural commitments that come with each tier. An implementer is assessed against a tier and, if it qualifies, may display the corresponding SPUR conformance mark.
+This profile is the publisher-facing layer. It names a single accreditation tier - Compliant - and the requirements an implementer must meet to be assessed at it. The requirements describe how telemetry is delivered, not what it contains: events arrive at event granularity, in real time, at an endpoint the publisher chooses. The profile makes no requirement about query intent, topic classification, or any other field that would describe what a user asked.
+
+Implementers that receive telemetry and redistribute it to publishers - attribution consumers - meet a parallel set of requirements (section 5.5) that carries these same delivery properties through to the publisher.
+
+The framing is deliberate. When a user accesses a publisher's web page through a CDN, that fetch generates a log line on the publisher's infrastructure. When an AI agent retrieves the same content, the analogous event is the unit of measurement this profile asks for. The standard supports richer disclosure; publishers are free to negotiate it in individual deals. The profile sets the value-neutral baseline.
 
 The standard and this profile are maintained separately. The standard defines the format; this profile defines the publisher-facing requirements layered on it. This profile adds requirements; it never modifies the wire format.
 
@@ -35,15 +36,13 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 This document specifies:
 
-- three accreditation tiers — Compliant, Preferred, and Strategic partner
-- the privacy floor that applies to conversation telemetry at each tier
-- the behavioural commitments required at each tier
-- how an implementer is assessed against a tier
+- the requirements an implementer must meet to be assessed as SPUR Compliant
+- how an implementer is assessed against those requirements
 - the conditions for displaying the SPUR conformance mark
 
 This document does not specify:
 
-- the telemetry wire format — event types, schema, conformance levels, transport (see the SPUR Telemetry Specification, the normative reference in section 2)
+- the telemetry wire format - event types, schema, conformance levels, transport (see the SPUR Telemetry Specification, the normative reference in section 2)
 - attribution algorithms or counting models
 - content access, licensing, or pricing terms
 - privacy policies or data protection requirements
@@ -56,7 +55,7 @@ This document does not specify:
 | RFC 2119 | Key words for use in RFCs to indicate requirement levels |
 | RFC 8174 | Ambiguity of uppercase vs lowercase in RFC 2119 key words |
 
-This profile constrains a fixed version of the SPUR Telemetry Specification. Where this document refers to "the standard", it means version 0.1 as cited above. Adoption of a later standard version is a deliberate revision of this profile (section 9).
+This profile constrains a fixed version of the SPUR Telemetry Specification. Where this document refers to "the standard", it means version 0.1 as cited above. Adoption of a later standard version is a deliberate revision of this profile (section 8).
 
 ## 3. Terms and definitions
 
@@ -66,167 +65,124 @@ The terms defined in the SPUR Telemetry Specification section 3 apply. In additi
 
 **profile**
 
-document that layers community-specific requirements on a standard: which conformance level is required, what privacy floor applies, and what behavioural commitments accompany conformance
+document that layers community-specific requirements on a standard
 
 ### 3.2
 
-**accreditation tier**
+**Compliant**
 
-named level of conformance to this profile — Compliant, Preferred, or Strategic partner — combining a technical baseline, a privacy floor, and behavioural commitments
+named tier of accreditation under this profile - meeting every requirement in section 5
 
 ### 3.3
 
-**privacy floor**
+**accredited implementer**
 
-least-disclosure privacy level at which conversation telemetry may be reported to meet a tier (section 6)
+emitter or attribution consumer assessed as meeting this profile's requirements
 
 ### 3.4
 
-**accredited implementer**
+**conformance mark**
 
-emitter or attribution consumer assessed as meeting a tier of this profile
+visual mark a SPUR-accredited implementer may display to indicate Compliant status (section 7)
 
 ### 3.5
 
-**conformance mark**
+**publisher-designated endpoint**
 
-visual mark a SPUR-accredited implementer may display to indicate its tier (section 8)
+destination chosen by a publisher to receive telemetry about that publisher's content
 
 ## 4. Relationship to the SPUR Telemetry standard
 
-The standard defines the mechanism. This profile selects from it.
+The standard defines the wire format. This profile selects from it and adds delivery requirements.
 
-The standard defines three **conformance levels** — Retrieval, Grounding, and Attribution (standard, section 5.7) — and a **privacy mechanism**: the `privacy_level` field, the four levels `full`, `summary`, `intent`, and `minimal`, and the fields each level permits on a conversation turn (standard, section 5.5). The standard makes no conformance level and no privacy level mandatory for any relationship. An emitter producing well-formed Retrieval-level events at `minimal` privacy is fully conforming to the standard.
+The standard defines three conformance levels - Retrieval, Grounding, and Attribution (standard, section 5.7) - and a privacy mechanism with four levels (standard, section 5.5). The standard makes no conformance level and no privacy level mandatory for any relationship.
 
-This profile builds on those mechanisms without changing them:
+This profile builds on the standard's mechanisms without changing them. An implementer that meets this profile's requirements is, by construction, conforming to the standard. An implementer can conform to the standard without engaging with this profile at all.
 
-- each **accreditation tier** requires a specific **conformance level** from the standard;
-- each tier sets a **privacy floor** — a point on the standard's privacy-level scale;
-- each tier adds **behavioural commitments** that the standard does not address.
+The dependency runs one way - profile to standard, never the reverse. The standard can therefore be transferred to another steward without disturbing this profile: the profile updates its section 2 reference to the standard's new location and version.
 
-This profile adds requirements. It does not modify, reinterpret, or extend the wire format. An implementer that meets any tier of this profile is, by construction, conforming to the standard. An implementer can conform to the standard without engaging with this profile at all.
+## 5. Requirements
 
-The dependency runs one way — profile to standard, never the reverse. The standard can therefore be transferred to another steward without disturbing this profile: the profile updates its section 2 reference to the standard's new location and version, and the tier definitions are unaffected.
+An implementer assessed as SPUR Compliant MUST meet every requirement below.
 
-## 5. Accreditation tiers
+### 5.1 Conformance to the standard
 
-This profile defines three tiers. They are cumulative: each tier includes every requirement of the tier below it.
+The implementer MUST be a conforming emitter to the SPUR Telemetry Specification at any conformance level - Retrieval, Grounding, or Attribution. Conformance is verified against the standard's reference test suite (standard, section 5.7).
 
-A tier has three components:
+A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting the full lifecycle from retrieval through engagement qualifies at the Attribution level. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
 
-- a **technical baseline** — a conformance level from the standard, verified against the standard's reference tests;
-- a **privacy floor** — see section 6;
-- **behavioural commitments** — undertakings about how the implementer operates, beyond the events it emits.
+### 5.2 Event-level delivery
 
-### 5.1 Compliant
+Telemetry MUST be delivered at event granularity. Each fetched, grounded, cited, displayed, or engaged content piece is reported as a discrete event, with the fields the standard requires at the implementer's conformance level.
 
-**Technical baseline.** The implementer is a conforming **Retrieval** emitter (standard, section 5.7.1): it reports `content_retrieved` events with `source_role` set, and at least one of `content_url` or `content_id` on every event. Verified against the standard's reference tests.
+Aggregated reporting - summaries, counts, or rollups that collapse multiple events into a single record - does not satisfy this requirement. Aggregation, where useful, is performed by the receiving party on event-level input.
 
-**Privacy floor.** None. Retrieval events carry no conversation turn, so no `privacy_level` applies (section 6).
+### 5.3 Real-time delivery
 
-**Behavioural commitments.**
+The implementer MUST be capable of delivering telemetry in real time. Real-time means events are dispatched to the receiving endpoint as they occur, subject only to ordinary network and processing latency.
 
-- The implementer's reporting endpoint MUST allow a publisher to route that publisher's own events to a destination of the publisher's choice. Telemetry about a publisher's content is not locked to a single consumer.
+A publisher MAY negotiate an alternative delivery cadence (for example, batched delivery on a fixed interval) in a specific commercial agreement. The standard supports both modes; this profile sets real time as the default and lets bilateral agreements vary it.
 
-A CDN reporting fetch events from edge servers, with no further commitments, meets Compliant. So does an AI platform that reports grounding events but reveals nothing about the user's question: it conforms to the standard, but sits below the Preferred privacy floor and is therefore assessed at Compliant.
+### 5.4 Publisher-designated endpoint
 
-### 5.2 Preferred
+Telemetry about a publisher's content MUST be able to reach a destination of that publisher's choice. It is not locked to a single party.
 
-**Technical baseline.** The implementer is a conforming **Grounding** emitter (standard, section 5.7.2): in addition to the Retrieval requirements, it produces session documents and emits `content_grounded` and turn events.
+This is an outcome requirement, not a fixed delivery path. How an implementer discharges it depends on what it is:
 
-**Privacy floor.** `intent`. Every conversation turn the implementer emits MUST carry a `privacy_level` of `intent`, `summary`, or `full`. Turns at `minimal` do not meet this tier (section 6).
+- **Publisher-side emitter** (source role `origin` or `edge`). The emitter delivers events to an endpoint the publisher configures. Endpoint configuration is a per-publisher property: an emitter reporting on content from multiple publishers MUST be able to route events to different endpoints according to the originating publisher's instructions.
+- **Agent emitter.** The standard provides no channel for a publisher to instruct an agent where to send session documents; agent routing is governed by the agent's own telemetry configuration (standard, section 7.3). An agent therefore discharges this requirement by sending sessions to an attribution consumer that resolves publisher identity and delivers each publisher's events to a destination that publisher chooses. A consumer relied on for this purpose MUST itself meet this profile's requirements for attribution consumers (section 5.5).
 
-**Behavioural commitments.**
+This keeps the guarantee meaningful for the agent path: a publisher cannot dictate which consumer an agent sends to, so the portability promise is carried by the requirement that any such consumer be accredited and honour the publisher's endpoint choice.
 
-- The implementer MUST publish reporting cadence and completeness figures — how often telemetry is delivered, and what proportion of eligible sessions or events it covers.
-- The implementer MUST opt in to independent audit of those figures once an audit programme is available.
-- Reporting endpoints MUST support aggregated reporting across multiple sources, so a publisher receiving telemetry from several implementers can consolidate it.
-- A marketplace operating at this tier MUST support licensing and pricing tied to the telemetry it reports.
+### 5.5 Attribution consumer requirements
 
-An AI platform that reports grounding at `intent` privacy, publishes completeness figures, and commits to audit meets Preferred.
+Sections 5.1 through 5.4 govern emitters. An attribution consumer - a party that receives telemetry and exposes per-publisher views (standard, section 7.3) - is assessed against the requirements below. The agent path in section 5.4 relies on them.
 
-### 5.3 Strategic partner
+#### 5.5.1 Conformance to the standard
 
-**Technical baseline.** The implementer is a conforming **Attribution** emitter (standard, section 5.7.3): in addition to the Grounding requirements, it emits `content_cited` events, and emits `content_displayed` and `content_engaged` events where applicable.
+The consumer MUST meet the attribution-consumer conformance rules of the SPUR Telemetry Specification (standard, section 5.7): accept any session with a compatible schema version, tolerate unknown fields and events from any conformance level, accept both the session-document and standalone-event delivery formats and reconstruct sessions from standalone events, and strip privacy-violating fields rather than reject the document carrying them.
 
-**Privacy floor.** `intent`, as for Preferred (section 6).
+#### 5.5.2 Publisher resolution and isolation
 
-**Behavioural commitments.**
+The consumer MUST resolve the owning publisher for each event and expose to a given publisher only the events about that publisher's content. A publisher's identifiable telemetry MUST NOT be disclosed to another party without that publisher's authorisation.
 
-- The implementer MUST be an active participant in the SPUR telemetry working group.
-- The implementer MUST publicly commit to interoperating with publisher-chosen reporting endpoints. Telemetry destinations are the publisher's choice, not the implementer's.
+Aggregate or anonymised reporting across a catalogue - benchmarks that do not reveal an individual publisher's content usage - is not restricted by this requirement. The bar is on disclosing one publisher's identifiable usage to another, not on a consumer reporting market-level statistics.
 
-An AI platform that reports the full lifecycle through to engagement, publishes completeness figures, opts in to audit, participates in the working group, and commits publicly to endpoint interoperability meets Strategic partner.
+This isolation is what lets an agent send a complete multi-publisher session to a single consumer without exposing one publisher's content usage to another.
 
-## 6. Privacy floor
+#### 5.5.3 Onward delivery to a publisher-designated endpoint
 
-The standard defines four privacy levels for conversation telemetry, ordered here from least to most disclosure:
+The consumer MUST be capable of delivering each publisher's events to a destination of that publisher's choice, at event granularity (as in section 5.2) and in real time (as in section 5.3). A publisher MAY negotiate an alternative cadence, as in section 5.3. This is the property section 5.4 relies on for the agent path.
 
-```
-minimal  <  intent  <  summary  <  full
-```
+## 6. Conformance assessment
 
-`minimal` shares only token counts and content URLs. `intent` adds the classified intent and topics of the user's question. `summary` adds a summarised query and response. `full` shares the verbatim query and response. The standard, section 5.5, defines exactly which fields each level permits.
+An implementer is assessed as SPUR Compliant when it meets every requirement in section 5 that applies to it: an emitter against sections 5.1 through 5.4, an attribution consumer against section 5.5. Assessment has two parts:
 
-The **privacy floor** is the least-disclosure level this profile accepts for a tier. It is a floor on *disclosure*, not a cap: it ensures the telemetry is informative enough to be useful for attribution. The standard's design ensures that telemetry at or above the floor still protects the user — `intent` reports what a question was about without reporting the question itself.
+1. **Technical conformance** - verified against the standard's reference test suite, for the conformance level an emitter advertises (5.1) or against the standard's attribution-consumer rules for a consumer (5.5.1). An objective, repeatable check.
+2. **Operational requirements** - the emitter delivery requirements (sections 5.2 through 5.4) and the consumer resolution, isolation, and onward-delivery requirements (sections 5.5.2 and 5.5.3), verified by inspection of the implementer's pipeline and by attestation.
 
-| Tier | Privacy floor | Meaning |
-|------|---------------|---------|
-| Compliant | None | Retrieval events carry no conversation turn |
-| Preferred | `intent` | Every turn at `intent`, `summary`, or `full`; `minimal` turns do not qualify |
-| Strategic partner | `intent` | As Preferred |
+The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately.
 
-The floor applies to every conversation turn the implementer emits. A single turn below the floor places the implementer below the tier, assessed at the next tier down.
+Assessment is self-attested in this preview version. An independent audit programme is anticipated; the profile will be revised to require opt-in to it once available.
 
-This profile sets the floor at `intent` and no higher. It does not require `summary` or `full`. Reporting the topic and intent of a question is enough to attribute content influence; the verbatim question is not needed for attribution and is not required by any tier.
+## 7. The SPUR conformance mark
 
-## 7. Conformance assessment
+A SPUR-accredited implementer may display the SPUR conformance mark.
 
-An implementer is assessed against the highest tier whose requirements it meets in full. Assessment has three parts:
-
-1. **Technical baseline** — verified against the standard's reference test suite for the relevant conformance level. An objective, repeatable check.
-2. **Privacy floor** — verified by inspecting the `privacy_level` on emitted conversation turns. This is an application-layer check, since the standard's JSON Schema cannot express it (standard, section 5.7).
-3. **Behavioural commitments** — verified by attestation, and by published evidence where the commitment is to publish something (cadence and completeness figures, working group participation, the public interoperability commitment).
-
-The [`accreditation/`](./accreditation/) directory holds tier fixtures: example telemetry that does and does not meet each tier's technical baseline and privacy floor. Behavioural commitments cannot be fixture-tested and are assessed separately.
-
-Assessment is self-attested in this preview version. An independent audit programme is anticipated; the Preferred and Strategic partner tiers require an implementer to opt in to it once available (section 5).
-
-## 8. The SPUR conformance mark
-
-A SPUR-accredited implementer may display the SPUR conformance mark for the tier at which it is assessed.
-
-- The mark names the tier — Compliant, Preferred, or Strategic partner.
-- The mark MUST NOT be displayed for a tier above the one at which the implementer is assessed.
+- The mark indicates the implementer is assessed as SPUR Compliant.
 - The mark refers to a specific version of this profile. An implementer reassessed against a later profile version updates the mark accordingly.
-- The SPUR Coalition may withdraw the right to display the mark from an implementer that no longer meets the tier.
+- The SPUR Coalition may withdraw the right to display the mark from an implementer that no longer meets the requirements.
 
 The conformance mark is a trademark of the SPUR Coalition. Permission to display it is granted through accreditation and is separate from the [Mozilla Public License 2.0](./LICENSE) that covers this document. The MPL does not grant any right to use the mark or other SPUR trademarks; that right is conveyed only through accreditation.
 
 Mark artwork and detailed display rules are published separately by the SPUR Coalition.
 
-## 9. Versioning
+## 8. Versioning
 
 This profile is versioned independently of the standard it constrains.
 
-Preview versions (0.x) may change tier definitions, privacy floors, and behavioural commitments as the accreditation programme develops. From 1.0 onward, a change that moves an implementer between tiers is a major version change.
+Preview versions (0.x) may change the requirements as the accreditation programme develops. From 1.0 onward, a change that adds, removes, or materially alters a requirement is a major version change.
 
 This profile constrains a fixed version of the standard (section 2). When the SPUR Telemetry standard publishes a new version, the working group decides whether this profile adopts it. Adoption is a deliberate revision: the section 2 reference changes, and the change is published as a new profile version. The standard advancing does not change this profile until the profile is revised to follow it.
 
-If stewardship of the standard transfers to another body, this profile updates its section 2 reference to the standard's new name and location. The tier definitions are unaffected — they reference conformance levels and privacy levels, which are properties of the format, not of its steward.
-
-## Annex A — Tier summary
-
-(informative)
-
-| | Compliant | Preferred | Strategic partner |
-|--|-----------|-----------|-------------------|
-| Technical baseline | Retrieval conformance | Grounding conformance | Attribution conformance |
-| Events | `content_retrieved` | + `content_grounded`, turn events | + `content_cited`, `content_displayed`, `content_engaged` |
-| Privacy floor | None | `intent` | `intent` |
-| Endpoint | Publisher-routable | + aggregated reporting | + public interoperability commitment |
-| Reporting figures | — | Cadence + completeness published | As Preferred |
-| Audit | — | Opt in when available | Opt in when available |
-| Working group | — | — | Active participant |
-
-Each tier includes every requirement of the tier to its left.
+If stewardship of the standard transfers to another body, this profile updates its section 2 reference to the standard's new name and location. The requirements are unaffected - they reference conformance levels and event semantics, which are properties of the format, not of its steward.
