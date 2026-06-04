@@ -1,0 +1,11 @@
+{
+  "_test_description": "A content_retrieved event with a source_role but neither 'content_url' nor 'content_id'. A content event must carry at least one identifier, so Retrieval conformance fails and the document reaches no tier.",
+  "_test_expected_tier": null,
+  "document_type": "event",
+  "schema_version": "0.1",
+  "event": {
+    "type": "content_retrieved",
+    "timestamp": "2026-05-22T10:00:01Z",
+    "source_role": "edge"
+  }
+}
