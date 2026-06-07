@@ -8,7 +8,7 @@ The **standard** - the telemetry wire format itself - lives in a separate reposi
 
 ## Why two repositories
 
-A standard and a profile are different kinds of document. The standard defines the wire format - what telemetry looks like on the wire - and stays free of any one community's requirements. The profile defines what an implementer must do to earn the SPUR conformance mark, and carries the accreditation programme. Separating them keeps the standard neutral and lets each evolve on its own cadence: the profile can change its requirements without touching the wire format, and other communities can write their own profiles against the same standard. The dependency runs one way - the profile references the standard by version; the standard never references the profile.
+The standard defines the wire format and stays free of any one community's requirements. The profile defines what an implementer must do to earn the SPUR conformance mark, and carries the accreditation programme. Keeping them apart lets each change on its own cadence, and lets other communities write their own profiles against the same standard. The dependency runs one way: the profile references the standard by version; the standard never references the profile.
 
 ## What's in this repo
 

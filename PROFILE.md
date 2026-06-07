@@ -26,9 +26,9 @@ This profile is the publisher-facing layer. It names a single accreditation tier
 
 Implementers that receive telemetry and redistribute it to publishers - attribution consumers - meet a parallel set of requirements (section 5.5) that carries these same delivery properties through to the publisher.
 
-The framing is deliberate. When a user accesses a publisher's web page through a CDN, that fetch generates a log line on the publisher's infrastructure. When an AI agent retrieves the same content, the analogous event is the unit of measurement this profile asks for. The standard supports richer disclosure; publishers are free to negotiate it in individual deals. The profile sets the value-neutral baseline.
+When a user accesses a publisher's web page through a CDN, that fetch generates a log line on the publisher's infrastructure. When an AI agent retrieves the same content, the equivalent event is the unit this profile asks for. The standard supports richer disclosure; publishers are free to negotiate it in individual deals.
 
-The standard and this profile are maintained separately. The standard defines the format; this profile defines the publisher-facing requirements layered on it. This profile adds requirements; it never modifies the wire format.
+The standard and this profile are maintained separately. This profile adds requirements; it never modifies the wire format.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119) and [RFC 8174](https://www.rfc-editor.org/rfc/rfc8174).
 
@@ -55,7 +55,7 @@ This document does not specify:
 | RFC 2119 | Key words for use in RFCs to indicate requirement levels |
 | RFC 8174 | Ambiguity of uppercase vs lowercase in RFC 2119 key words |
 
-This profile constrains a fixed version of the Content Telemetry Specification. Where this document refers to "the standard", it means version 0.1 as cited above. Adoption of a later standard version is a deliberate revision of this profile (section 8).
+This profile constrains a fixed version of the Content Telemetry Specification. Where this document refers to "the standard", it means version 0.1 as cited above. Adoption of a later standard version is a revision of this profile (section 8).
 
 ## 3. Terms and definitions
 
@@ -97,7 +97,7 @@ The standard defines the wire format. This profile selects from it and adds deli
 
 The standard defines three conformance levels - Retrieval, Grounding, and Attribution (standard, section 5.7) - and a privacy mechanism with four levels (standard, section 5.5). The standard makes no conformance level and no privacy level mandatory for any relationship.
 
-This profile builds on the standard's mechanisms without changing them. An implementer that meets this profile's requirements is, by construction, conforming to the standard. An implementer can conform to the standard without engaging with this profile at all.
+This profile builds on the standard's mechanisms without changing them. An implementer that meets this profile's requirements is conforming to the standard. An implementer can conform to the standard without engaging with this profile at all.
 
 The dependency runs one way - profile to standard, never the reverse. The standard can therefore be transferred to another steward without disturbing this profile: the profile updates its section 2 reference to the standard's new location and version.
 
@@ -132,7 +132,7 @@ This is an outcome requirement, not a fixed delivery path. How an implementer di
 - **Publisher-side emitter** (source role `origin` or `edge`). The emitter delivers events to an endpoint the publisher configures. Endpoint configuration is a per-publisher property: an emitter reporting on content from multiple publishers MUST be able to route events to different endpoints according to the originating publisher's instructions.
 - **Agent emitter.** The standard provides no channel for a publisher to instruct an agent where to send session documents; agent routing is governed by the agent's own telemetry configuration (standard, section 7.3). An agent therefore discharges this requirement by sending sessions to an attribution consumer that resolves publisher identity and delivers each publisher's events to a destination that publisher chooses. A consumer relied on for this purpose MUST itself meet this profile's requirements for attribution consumers (section 5.5).
 
-This keeps the guarantee meaningful for the agent path: a publisher cannot dictate which consumer an agent sends to, so the portability promise is carried by the requirement that any such consumer be accredited and honour the publisher's endpoint choice.
+On the agent path a publisher cannot choose which consumer an agent sends to; the endpoint requirement is instead carried by the rule that any such consumer be accredited and honour the publisher's endpoint choice.
 
 ### 5.5 Attribution consumer requirements
 
@@ -146,9 +146,9 @@ The consumer MUST meet the attribution-consumer conformance rules of the Content
 
 The consumer MUST resolve the owning publisher for each event and expose to a given publisher only the events about that publisher's content. A publisher's identifiable telemetry MUST NOT be disclosed to another party without that publisher's authorisation.
 
-Aggregate or anonymised reporting across a catalogue - benchmarks that do not reveal an individual publisher's content usage - is not restricted by this requirement. The bar is on disclosing one publisher's identifiable usage to another, not on a consumer reporting market-level statistics.
+Aggregate or anonymised reporting across a catalogue - benchmarks that do not reveal an individual publisher's content usage - is not restricted by this requirement.
 
-This isolation is what lets an agent send a complete multi-publisher session to a single consumer without exposing one publisher's content usage to another.
+This isolation lets an agent send a complete multi-publisher session to a single consumer without exposing one publisher's content usage to another.
 
 #### 5.5.3 Onward delivery to a publisher-designated endpoint
 
@@ -183,6 +183,6 @@ This profile is versioned independently of the standard it constrains.
 
 Preview versions (0.x) may change the requirements as the accreditation programme develops. From 1.0 onward, a change that adds, removes, or materially alters a requirement is a major version change.
 
-This profile constrains a fixed version of the standard (section 2). When the Content Telemetry standard publishes a new version, the working group decides whether this profile adopts it. Adoption is a deliberate revision: the section 2 reference changes, and the change is published as a new profile version. The standard advancing does not change this profile until the profile is revised to follow it.
+This profile constrains a fixed version of the standard (section 2). When the Content Telemetry standard publishes a new version, the working group decides whether this profile adopts it. Adoption is a revision: the section 2 reference changes, and the change is published as a new profile version. The standard advancing does not change this profile until the profile is revised to follow it.
 
 If stewardship of the standard transfers to another body, this profile updates its section 2 reference to the standard's new name and location. The requirements are unaffected - they reference conformance levels and event semantics, which are properties of the format, not of its steward.
