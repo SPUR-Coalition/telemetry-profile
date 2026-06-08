@@ -152,7 +152,7 @@ This isolation lets an agent send a complete multi-publisher session to a single
 
 #### 5.5.3 Onward delivery to a publisher-designated endpoint
 
-The consumer MUST be capable of delivering each publisher's events to a destination of that publisher's choice, at event granularity (as in section 5.2) and in real time (as in section 5.3). A publisher MAY negotiate an alternative cadence, as in section 5.3. This is the property section 5.4 relies on for the agent path.
+The consumer MUST be capable of delivering each publisher's events to a destination of that publisher's choice, at event granularity (as in section 5.2) and in real time (as in section 5.3). A publisher MAY negotiate an alternative cadence, as in section 5.3.
 
 ## 6. Conformance assessment
 
