@@ -27,3 +27,7 @@ This profile constrains a fixed version of the Content Telemetry standard (PROFI
 - British English.
 - Sentence case for headings.
 - RFC 2119 keywords (MUST, SHOULD, MAY) per PROFILE.md.
+
+## Licensing
+
+This profile is published under the [Creative Commons Attribution-ShareAlike 4.0 International licence](./LICENSE). By submitting a contribution you agree to license it under the same terms. The SPUR conformance mark is a trademark and is not licensed by CC BY-SA; it is granted only through accreditation (PROFILE.md section 7).

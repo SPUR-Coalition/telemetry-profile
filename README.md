@@ -14,7 +14,7 @@ The standard defines the wire format and stays free of any one community's requi
 
 - [PROFILE.md](./PROFILE.md) - the profile: requirements, conformance assessment, conformance mark
 - [accreditation/](./accreditation/) - example fixtures and the assessment runner
-- [LICENSE](./LICENSE) - Apache License 2.0
+- [LICENSE](./LICENSE) - Creative Commons Attribution-ShareAlike 4.0 International
 
 ## Compliant at a glance
 

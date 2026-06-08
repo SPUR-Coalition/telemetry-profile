@@ -4,7 +4,7 @@ Publisher-facing requirements for the Content Telemetry standard.
 
 **Version:** 0.1
 **Status:** Preview
-**Last updated:** 2026-05-27
+**Last updated:** 2026-06-08
 **Constrains:** Content Telemetry Specification, version 0.1
 
 ## Contents
@@ -173,7 +173,7 @@ A SPUR-accredited implementer may display the SPUR conformance mark.
 - The mark refers to a specific version of this profile. An implementer reassessed against a later profile version updates the mark accordingly.
 - The SPUR Coalition may withdraw the right to display the mark from an implementer that no longer meets the requirements.
 
-The conformance mark is a trademark of the SPUR Coalition. Permission to display it is granted through accreditation and is separate from the [Apache License 2.0](./LICENSE) that covers this document. Consistent with section 6 of that licence, the licence grants no right to use the SPUR conformance mark or other SPUR trademarks; that right is conveyed only through accreditation.
+The conformance mark is a trademark of the SPUR Coalition. Permission to display it is granted through accreditation and is separate from the [Creative Commons Attribution-ShareAlike 4.0 International licence](./LICENSE) that covers this document. Consistent with section 2(b)(2) of that licence, the licence grants no right to use the SPUR conformance mark or other SPUR trademarks; that right is conveyed only through accreditation.
 
 Mark artwork and detailed display rules are published separately by the SPUR Coalition.
 
