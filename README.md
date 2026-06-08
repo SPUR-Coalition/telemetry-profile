@@ -2,15 +2,15 @@
 
 **Publisher-facing requirements for the Content Telemetry standard.**
 
-This repository is the **profile**. It names a single accreditation tier - Compliant - and the requirements an implementer must meet to be assessed at it: conformance to the standard, event-level delivery, real-time delivery, and a publisher-designated endpoint. Attribution consumers - parties that receive telemetry and redistribute per-publisher views - meet a parallel requirement set. The profile makes no requirement about query intent or topic classification.
+This repository is the **profile**, naming a single accreditation tier - Compliant - and the requirements an implementer must meet to be assessed at it: conformance to the standard, event-level delivery, real-time delivery, and a publisher-designated endpoint. Attribution consumers - parties that receive telemetry and redistribute per-publisher views - meet a parallel requirement set.
 
 The **standard** - the telemetry wire format itself - lives in a separate repository: [SPUR-Coalition/telemetry](https://github.com/SPUR-Coalition/telemetry). This profile references the standard by version and does not restate it.
 
-## Why two repositories
+## Standard and Profile
 
 The standard defines the wire format and stays free of any one community's requirements. The profile defines what an implementer must do to earn the SPUR conformance mark, and carries the accreditation programme. Keeping them apart lets each change on its own cadence, and lets other communities write their own profiles against the same standard. The dependency runs one way: the profile references the standard by version; the standard never references the profile.
 
-## What's in this repo
+## Repo Contents
 
 - [PROFILE.md](./PROFILE.md) - the profile: requirements, conformance assessment, conformance mark
 - [accreditation/](./accreditation/) - example fixtures and the assessment runner
