@@ -20,7 +20,7 @@ The standard defines the wire format and stays free of any one community's requi
 
 | Requirement | Means |
 |-------------|-------|
-| Conformance to the standard | Conforming emitter at Retrieval, Grounding, or Attribution level |
+| Conformance to the standard | Conforming emitter at Retrieval, Grounding, or Citation level |
 | Event-level delivery | Discrete events per fetch / grounding / citation / display / engagement - no aggregation |
 | Real-time delivery | Events dispatched as they occur; alternative cadence by per-publisher negotiation |
 | Publisher-designated endpoint | Telemetry routed to a destination the publisher chooses |

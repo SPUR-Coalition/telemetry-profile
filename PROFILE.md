@@ -95,7 +95,7 @@ destination chosen by a publisher to receive telemetry about that publisher's co
 
 The standard defines the wire format. This profile selects from it and adds delivery requirements.
 
-The standard defines three conformance levels - Retrieval, Grounding, and Attribution (standard, section 5.7) - and a privacy mechanism with four levels (standard, section 5.5). The standard makes no conformance level and no privacy level mandatory for any relationship.
+The standard defines three conformance levels - Retrieval, Grounding, and Citation (standard, section 5.7) - and a privacy mechanism with four levels (standard, section 5.5). The standard makes no conformance level and no privacy level mandatory for any relationship.
 
 This profile builds on the standard's mechanisms without changing them. An implementer that meets this profile's requirements is conforming to the standard. An implementer can conform to the standard without engaging with this profile at all.
 
@@ -107,9 +107,9 @@ An implementer assessed as SPUR Compliant MUST meet every requirement below.
 
 ### 5.1 Conformance to the standard
 
-The implementer MUST be a conforming emitter to the Content Telemetry Specification at any conformance level - Retrieval, Grounding, or Attribution. Conformance is verified against the standard's reference test suite (standard, section 5.7).
+The implementer MUST be a conforming emitter to the Content Telemetry Specification at any conformance level - Retrieval, Grounding, or Citation. Conformance is verified against the standard's reference test suite (standard, section 5.7).
 
-A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting the full lifecycle from retrieval through engagement qualifies at the Attribution level. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
+A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting the full lifecycle from retrieval through engagement qualifies at the Citation level. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
 
 ### 5.2 Event-level delivery
 

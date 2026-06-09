@@ -28,7 +28,7 @@ uv run validate.py
 
 Each fixture is a Content Telemetry document - a session document or a standalone event. The runner checks Retrieval conformance (standard, section 5.7.1): every event has `type` and `timestamp`, every content event carries at least one of `content_url` or `content_id`, and every `content_retrieved` event carries `source_role`.
 
-Retrieval is the standard's least-demanding conformance level, and Grounding and Attribution are cumulative on it. Passing Retrieval is therefore necessary and sufficient for the standard-conformance component of this profile.
+Retrieval is the standard's least-demanding conformance level, and Grounding and Citation are cumulative on it. Passing Retrieval is therefore necessary and sufficient for the standard-conformance component of this profile.
 
 A document that passes Retrieval is assessed Compliant. A document that fails Retrieval reaches no tier.
 
@@ -50,7 +50,7 @@ Content Telemetry consumers tolerate unknown fields, so these annotations do not
 | `retrieval-standalone-edge` | Compliant | Standalone CDN retrieval event |
 | `retrieval-session-edge` | Compliant | Session of retrieval events only |
 | `grounding-intent-privacy` | Compliant | Grounding-conformant session - the profile is agnostic to privacy_level |
-| `attribution-full-lifecycle` | Compliant | Full retrieval-to-engagement lifecycle |
+| `citation-full-lifecycle` | Compliant | Full retrieval-to-engagement lifecycle |
 | `retrieval-missing-source-role` | No tier | Retrieval baseline fails on a missing field |
 | `retrieval-missing-content-identifier` | No tier | Retrieval baseline fails - no content identifier |
 
