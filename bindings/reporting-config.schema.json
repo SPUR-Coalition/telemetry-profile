@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contenttelemetry.org/profiles/spur/reporting-config.schema.json",
+  "title": "Content Telemetry licence-binding reporting configuration",
+  "description": "Schema for the profile-specific JSON configuration carried by a licence-layer reporting declaration (e.g. the RSL <reporting> element) that points at the SPUR Content Telemetry profile. The body carries only licence-scoped demands the agent must vary its behaviour on. Transport details - signing keys, claimed domains, endpoint of record - live in the participant's /.well-known/content-telemetry.json manifest (standard, section 8), not here. Field names match the Content Telemetry Specification verbatim.",
+  "type": "object",
+  "properties": {
+    "conformance_level": {
+      "type": "string",
+      "enum": ["retrieval", "grounding", "citation"],
+      "description": "Minimum conformance level the licence demands of the reporting Client (standard, section 5.7). A Client that cannot emit at or above this level cannot satisfy the licence's reporting requirement. This is the demand the telemetry manifest deliberately cannot express (standard, section 8.5); the licence supplies the enforcement context."
+    },
+    "privacy_level": {
+      "type": "string",
+      "enum": ["full", "summary", "intent", "minimal"],
+      "description": "Privacy floor: the minimum disclosure the licence requires (standard, section 5.5). Interpreted as a floor, not a ceiling - the Client MUST populate at least the fields this level permits, and MAY disclose more. The SPUR profile's floor is event-level retrieval with no query intent; 'minimal' expresses exactly that."
+    },
+    "manifest": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional pointer to the publisher's /.well-known/content-telemetry.json manifest (standard, section 8), the source of truth for signing keys, claimed domains, and the endpoint of record. Provided here so an agent can discover transport details when content is served from a host other than the one the licence is published on. The licence does not restate manifest contents."
+    },
+    "delivery": {
+      "type": "string",
+      "enum": ["real_time", "batch"],
+      "description": "Optional required delivery cadence (profile, section 5.3). Real-time is the SPUR default; a licence MAY require batch where that is the agreed mode."
+    },
+    "content_id_scheme": {
+      "type": "string",
+      "description": "Optional declaration of the content_id scheme used by this publisher (e.g. 'doi', 'iscc', 'isbn', 'catalogue'), so the Client populates content_id correctly (standard, section 4.5)."
+    }
+  },
+  "required": ["conformance_level"],
+  "additionalProperties": true
+}

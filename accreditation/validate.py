@@ -5,7 +5,7 @@ This profile defines a single tier - Compliant - whose technical requirement
 (PROFILE.md section 5.1) is that the implementer is a conforming emitter to
 the Content Telemetry Specification at any conformance level. The cheapest level
 to satisfy is Retrieval (standard, section 5.7.1), and Grounding and
-Attribution are cumulative on it. Checking Retrieval conformance is therefore
+Citation are cumulative on it. Checking Retrieval conformance is therefore
 necessary and sufficient for the standard-conformance component of this
 profile's assessment.
 

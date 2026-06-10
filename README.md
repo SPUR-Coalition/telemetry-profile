@@ -2,7 +2,7 @@
 
 **Publisher-facing requirements for the Content Telemetry standard.**
 
-This repository is the **profile**, naming a single accreditation tier - Compliant - and the requirements an implementer must meet to be assessed at it: conformance to the standard, event-level delivery, real-time delivery, and a publisher-designated endpoint. Attribution consumers - parties that receive telemetry and redistribute per-publisher views - meet a parallel requirement set.
+This repository is the **profile**, naming a single accreditation tier - Compliant - and the requirements an implementer must meet to be assessed at it: conformance to the standard, event-level delivery, real-time delivery, and a publisher-designated endpoint. Telemetry consumers - parties that receive telemetry and redistribute per-publisher views - meet a parallel requirement set.
 
 The **standard** - the telemetry wire format itself - lives in a separate repository: [SPUR-Coalition/telemetry](https://github.com/SPUR-Coalition/telemetry). This profile references the standard by version and does not restate it.
 
@@ -25,7 +25,7 @@ The standard defines the wire format and stays free of any one community's requi
 | Real-time delivery | Events dispatched as they occur; alternative cadence by per-publisher negotiation |
 | Publisher-designated endpoint | Telemetry routed to a destination the publisher chooses |
 
-Attribution consumers meet a parallel set (PROFILE.md section 5.5): standard consumer conformance, publisher resolution and isolation, and onward delivery to a publisher-designated endpoint.
+Telemetry consumers meet a parallel set (PROFILE.md section 5.5): standard consumer conformance, publisher resolution and isolation, and onward delivery to a publisher-designated endpoint.
 
 See [PROFILE.md](./PROFILE.md) for the full definitions.
 

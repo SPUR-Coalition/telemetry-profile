@@ -50,7 +50,7 @@ Content Telemetry consumers tolerate unknown fields, so these annotations do not
 | `retrieval-standalone-edge` | Compliant | Standalone CDN retrieval event |
 | `retrieval-session-edge` | Compliant | Session of retrieval events only |
 | `grounding-intent-privacy` | Compliant | Grounding-conformant session - the profile is agnostic to privacy_level |
-| `citation-full-lifecycle` | Compliant | Full retrieval-to-engagement lifecycle |
+| `citation-full-lifecycle` | Compliant | Citation plus optional display and engagement signals |
 | `retrieval-missing-source-role` | No tier | Retrieval baseline fails on a missing field |
 | `retrieval-missing-content-identifier` | No tier | Retrieval baseline fails - no content identifier |
 
@@ -58,4 +58,4 @@ Content Telemetry consumers tolerate unknown fields, so these annotations do not
 
 The delivery requirements in PROFILE.md sections 5.2 through 5.4 - event-level granularity, real-time delivery, and a publisher-designated endpoint - are verified by attestation and endpoint inspection during accreditation. They are not represented in these fixtures.
 
-The attribution consumer requirements (PROFILE.md section 5.5) are assessed the same way. A consumer's standard conformance (5.5.1) is the consumer-side reading rules of the standard; publisher resolution, isolation, and onward delivery (5.5.2, 5.5.3) are pipeline properties verified by attestation and inspection, not by these fixtures.
+The telemetry consumer requirements (PROFILE.md section 5.5) are assessed the same way. A consumer's standard conformance (5.5.1) is the consumer-side reading rules of the standard; publisher resolution, isolation, and onward delivery (5.5.2, 5.5.3) are pipeline properties verified by attestation and inspection, not by these fixtures.

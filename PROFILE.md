@@ -24,7 +24,7 @@ The Content Telemetry standard defines a wire format for reporting how AI agents
 
 This profile is the publisher-facing layer. It names a single accreditation tier - Compliant - and the requirements an implementer must meet to be assessed at it. The requirements describe how telemetry is delivered, not what it contains: events arrive at event granularity, in real time, at an endpoint the publisher chooses. The profile makes no requirement about query intent, topic classification, or any other field that would describe what a user asked.
 
-Implementers that receive telemetry and redistribute it to publishers - attribution consumers - meet a parallel set of requirements (section 5.5) that carries these same delivery properties through to the publisher.
+Implementers that receive telemetry and redistribute it to publishers - telemetry consumers - meet a parallel set of requirements (section 5.5) that carries these same delivery properties through to the publisher.
 
 When a user accesses a publisher's web page through a CDN, that fetch generates a log line on the publisher's infrastructure. When an AI agent retrieves the same content, the equivalent event is the unit this profile asks for. The standard supports richer disclosure; publishers are free to negotiate it in individual deals.
 
@@ -77,7 +77,7 @@ named tier of accreditation under this profile - meeting every requirement in se
 
 **accredited implementer**
 
-emitter or attribution consumer assessed as meeting this profile's requirements
+emitter or telemetry consumer assessed as meeting this profile's requirements
 
 ### 3.4
 
@@ -109,7 +109,7 @@ An implementer assessed as SPUR Compliant MUST meet every requirement below.
 
 The implementer MUST be a conforming emitter to the Content Telemetry Specification at any conformance level - Retrieval, Grounding, or Citation. Conformance is verified against the standard's reference test suite (standard, section 5.7).
 
-A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting the full lifecycle from retrieval through engagement qualifies at the Citation level. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
+A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting retrieval, grounding, and citation qualifies at the Citation level; display and engagement events are optional lifecycle signals under the standard. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
 
 ### 5.2 Event-level delivery
 
@@ -130,17 +130,17 @@ Telemetry about a publisher's content MUST be able to reach a destination of tha
 This is an outcome requirement, not a fixed delivery path. How an implementer discharges it depends on what it is:
 
 - **Publisher-side emitter** (source role `origin` or `edge`). The emitter delivers events to an endpoint the publisher configures. Endpoint configuration is a per-publisher property: an emitter reporting on content from multiple publishers MUST be able to route events to different endpoints according to the originating publisher's instructions.
-- **Agent emitter.** The standard provides no channel for a publisher to instruct an agent where to send session documents; agent routing is governed by the agent's own telemetry configuration (standard, section 7.3). An agent therefore discharges this requirement by sending sessions to an attribution consumer that resolves publisher identity and delivers each publisher's events to a destination that publisher chooses. A consumer relied on for this purpose MUST itself meet this profile's requirements for attribution consumers (section 5.5).
+- **Agent emitter.** The standard provides no channel for a publisher to instruct an agent where to send session documents; agent routing is governed by the agent's own telemetry configuration (standard, section 7.3). An agent therefore discharges this requirement by sending sessions to a telemetry consumer that resolves publisher identity and delivers each publisher's events to a destination that publisher chooses. A consumer relied on for this purpose MUST itself meet this profile's requirements for telemetry consumers (section 5.5).
 
 On the agent path a publisher cannot choose which consumer an agent sends to; the endpoint requirement is instead carried by the rule that any such consumer be accredited and honour the publisher's endpoint choice.
 
-### 5.5 Attribution consumer requirements
+### 5.5 Telemetry consumer requirements
 
-Sections 5.1 through 5.4 govern emitters. An attribution consumer - a party that receives telemetry and exposes per-publisher views (standard, section 7.3) - is assessed against the requirements below. The agent path in section 5.4 relies on them.
+Sections 5.1 through 5.4 govern emitters. A telemetry consumer - a party that receives telemetry and exposes per-publisher views (standard, section 7.3) - is assessed against the requirements below. The agent path in section 5.4 relies on them.
 
 #### 5.5.1 Conformance to the standard
 
-The consumer MUST meet the attribution-consumer conformance rules of the Content Telemetry Specification (standard, section 5.7): accept any session with a compatible schema version, tolerate unknown fields and events from any conformance level, accept both the session-document and standalone-event delivery formats and reconstruct sessions from standalone events, and strip privacy-violating fields rather than reject the document carrying them.
+The consumer MUST meet the telemetry-consumer conformance rules of the Content Telemetry Specification (standard, section 5.7): accept any session with a compatible schema version, tolerate unknown fields and events from any conformance level, accept both the session-document and standalone-event delivery formats and reconstruct sessions from standalone events, and strip privacy-violating fields rather than reject the document carrying them.
 
 #### 5.5.2 Publisher resolution and isolation
 
@@ -156,9 +156,9 @@ The consumer MUST be capable of delivering each publisher's events to a destinat
 
 ## 6. Conformance assessment
 
-An implementer is assessed as SPUR Compliant when it meets every requirement in section 5 that applies to it: an emitter against sections 5.1 through 5.4, an attribution consumer against section 5.5. Assessment has two parts:
+An implementer is assessed as SPUR Compliant when it meets every requirement in section 5 that applies to it: an emitter against sections 5.1 through 5.4, a telemetry consumer against section 5.5. Assessment has two parts:
 
-1. **Technical conformance** - verified against the standard's reference test suite, for the conformance level an emitter advertises (5.1) or against the standard's attribution-consumer rules for a consumer (5.5.1). An objective, repeatable check.
+1. **Technical conformance** - verified against the standard's reference test suite, for the conformance level an emitter advertises (5.1) or against the standard's telemetry-consumer rules for a consumer (5.5.1). An objective, repeatable check.
 2. **Operational requirements** - the emitter delivery requirements (sections 5.2 through 5.4) and the consumer resolution, isolation, and onward-delivery requirements (sections 5.5.2 and 5.5.3), verified by inspection of the implementer's pipeline and by attestation.
 
 The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately.
