@@ -4,7 +4,7 @@ Publisher-facing requirements for the Content Telemetry standard.
 
 **Version:** 0.1
 **Status:** Preview
-**Last updated:** 2026-06-08
+**Last updated:** 2026-06-10
 **Constrains:** Content Telemetry Specification, version 0.1
 
 ## Contents
