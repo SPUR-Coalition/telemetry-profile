@@ -142,7 +142,7 @@ Sections 5.1 through 5.4 govern emitters. A telemetry consumer - a party that re
 
 #### 5.5.1 Conformance to the standard
 
-The consumer MUST meet the telemetry-consumer conformance rules of the Content Telemetry Specification (standard, section 5.7): accept any session with a compatible schema version, tolerate unknown fields and events from any conformance level, accept both the session-document and standalone-event delivery formats and reconstruct sessions from standalone events, and strip privacy-violating fields rather than reject the document carrying them.
+The consumer MUST meet the telemetry-consumer conformance rules of the Content Telemetry Specification (standard, section 5.7.4): accept any session with a compatible schema version, tolerate unknown fields and events from any conformance level, and accept the standard's delivery formats, reconstructing sessions from standalone events. The consumer MUST also strip privacy-violating fields rather than reject the document carrying them; the standard recommends this behaviour (standard, section 5.7.5) and this profile makes it a requirement.
 
 #### 5.5.2 Publisher resolution and isolation
 

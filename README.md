@@ -1,6 +1,6 @@
 # SPUR Content Telemetry Profile
 
-**Publisher-facing requirements for the Content Telemetry standard.**
+**What an implementer must meet to earn the SPUR conformance mark, layered on the Content Telemetry standard.**
 
 This repository is the **profile**, naming a single accreditation tier - Compliant - and the requirements an implementer must meet to be assessed at it: conformance to the standard, event-level delivery, real-time delivery, and a publisher-designated endpoint. Telemetry consumers - parties that receive telemetry and redistribute per-publisher views - meet a parallel requirement set.
 
