@@ -4,7 +4,7 @@ Publisher-facing requirements for the Content Telemetry standard.
 
 **Version:** 0.1
 **Status:** Preview
-**Last updated:** 2026-06-10
+**Last updated:** 2026-06-11
 **Constrains:** Content Telemetry Specification, version 0.1
 
 ## Contents
@@ -117,6 +117,8 @@ Telemetry MUST be delivered at event granularity. Each fetched, grounded, cited,
 
 Aggregated reporting - summaries, counts, or rollups that collapse multiple events into a single record - does not satisfy this requirement. Aggregation, where useful, is performed by the receiving party on event-level input.
 
+Within the scope of the relationship it reports under, the implementer MUST report every qualifying event it observes. Selective reporting - emitting events for some sessions or content while omitting others in the same scope - does not satisfy this requirement. A publisher MAY accept sampling in a specific commercial agreement, as with delivery cadence in section 5.3. Completeness is assessed as an operational requirement (section 6).
+
 ### 5.3 Real-time delivery
 
 The implementer MUST be capable of delivering telemetry in real time. Real-time means events are dispatched to the receiving endpoint as they occur, subject only to ordinary network and processing latency.
@@ -161,7 +163,7 @@ An implementer is assessed as SPUR Compliant when it meets every requirement in 
 1. **Technical conformance** - verified against the standard's reference test suite, for the conformance level an emitter advertises (5.1) or against the standard's telemetry-consumer rules for a consumer (5.5.1). An objective, repeatable check.
 2. **Operational requirements** - the emitter delivery requirements (sections 5.2 through 5.4) and the consumer resolution, isolation, and onward-delivery requirements (sections 5.5.2 and 5.5.3), verified by inspection of the implementer's pipeline and by attestation.
 
-The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately.
+The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, completeness, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately.
 
 Assessment is self-attested in this preview version. An independent audit programme is anticipated; the profile will be revised to require opt-in to it once available.
 
