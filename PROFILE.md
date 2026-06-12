@@ -185,6 +185,6 @@ This profile is versioned independently of the standard it constrains.
 
 Preview versions (0.x) may change the requirements as the accreditation programme develops. From 1.0 onward, a change that adds, removes, or materially alters a requirement is a major version change.
 
-This profile constrains a fixed version of the standard (section 2). When the Content Telemetry standard publishes a new version, the working group decides whether this profile adopts it. Adoption is a revision: the section 2 reference changes, and the change is published as a new profile version. The standard advancing does not change this profile until the profile is revised to follow it.
+This profile constrains a fixed version of the standard (section 2). When the Content Telemetry standard publishes a new version, the SPUR Coalition decides whether this profile adopts it. Adoption is a revision: the section 2 reference changes, and the change is published as a new profile version. The standard advancing does not change this profile until the profile is revised to follow it.
 
 If stewardship of the standard transfers to another body, this profile updates its section 2 reference to the standard's new name and location. The requirements are unaffected - they reference conformance levels and event semantics, which are properties of the format, not of its steward.

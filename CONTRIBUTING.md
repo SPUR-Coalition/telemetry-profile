@@ -8,6 +8,7 @@ This repository contains the **profile** - the requirements for the Compliant ti
 |------|---------|
 | [PROFILE.md](./PROFILE.md) | The normative profile |
 | [accreditation/](./accreditation/) | Example fixtures and assessment material |
+| [bindings/](./bindings/) | How licensing layers (e.g. RSL) reference this profile |
 
 ## Proposing changes
 
