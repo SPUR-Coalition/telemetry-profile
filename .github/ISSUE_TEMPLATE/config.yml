@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Wire format / standard feedback
+    url: https://github.com/SPUR-Coalition/telemetry/issues
+    about: Event types, schemas, conformance levels, and the wire format live in the standard, not this profile. File those there.
+  - name: Read the contribution guide first
+    url: https://github.com/SPUR-Coalition/telemetry-profile/blob/main/CONTRIBUTING.md
+    about: How changes are proposed, what belongs in this repo, and the conventions to follow.

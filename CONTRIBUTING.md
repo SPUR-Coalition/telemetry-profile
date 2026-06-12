@@ -14,7 +14,7 @@ This repository contains the **profile** - the requirements for the Compliant ti
 
 The profile's requirements affect every accredited implementer. Before submitting a PR:
 
-1. Open an issue describing the change and its motivation.
+1. Open an issue describing the change and its motivation (the **Profile feedback** template walks through the points below).
 2. State which requirement is affected and whether the change moves implementers in or out of the Compliant tier.
 3. If the change depends on a new version of the standard, reference the standard issue or version.
 4. Update PROFILE.md and any affected fixtures in `accreditation/`.

@@ -1,0 +1,52 @@
+name: Fixture or binding bug
+description: Report a concrete defect in an accreditation fixture, the validation script, or a binding schema.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for a concrete, checkable defect: an accreditation fixture
+        that passes or fails the wrong way, a validate.py check that doesn't
+        match PROFILE.md, a binding schema that accepts or rejects the wrong
+        document, or a mismatch between the prose and an artefact.
+
+        For a design question or a proposed change to the Compliant tier, use
+        the **Profile feedback / open question** template instead. Bugs in the
+        wire-format schemas belong in the
+        [standard repository](https://github.com/SPUR-Coalition/telemetry).
+  - type: dropdown
+    id: artefact
+    attributes:
+      label: Which artefact
+      options:
+        - accreditation/validate.py
+        - Accreditation fixture (accreditation/fixtures/)
+        - bindings/reporting-config.schema.json
+        - RSL binding prose (bindings/)
+        - Prose / artefact mismatch
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Section, filename, or line (e.g. "accreditation/fixtures/session-citation-tier.json", "PROFILE.md 5.5.1").
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen
+      description: The correct behaviour - e.g. "this fixture should reach the Compliant tier" or "this reporting-config should be rejected".
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happens
+      description: The observed behaviour. Paste the validator output or the offending JSON if you can.
+      render: shell
+    validations:
+      required: true

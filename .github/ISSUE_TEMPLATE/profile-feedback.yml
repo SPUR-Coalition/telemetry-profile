@@ -1,0 +1,72 @@
+name: Profile feedback / open question
+description: Raise a design question, an unclear requirement, or a proposed change to the Compliant tier.
+title: "[profile] "
+labels: ["needs-discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reviewing the SPUR profile. This template is for feedback on
+        the profile itself - design questions, unclear or contradictory
+        requirements, gaps, or proposed changes to the Compliant tier and its
+        assessment.
+
+        The telemetry wire format does not live here: changes to event types,
+        schema, or conformance levels belong in the
+        [standard repository](https://github.com/SPUR-Coalition/telemetry).
+
+        For a concrete defect in an accreditation fixture, the validation
+        script, or a binding schema, use the **Fixture or binding bug**
+        template instead.
+  - type: input
+    id: requirement
+    attributes:
+      label: Requirement affected
+      description: Which section(s) of PROFILE.md does this concern? (e.g. "5.2 Event-level delivery", "5.5.3 Onward delivery")
+      placeholder: "5.3 Real-time delivery"
+    validations:
+      required: false
+  - type: textarea
+    id: observation
+    attributes:
+      label: What you observed
+      description: The question, ambiguity, gap, or problem - as concretely as you can put it.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Why it matters
+      description: What breaks, stays unclear, or gets attested inconsistently if this isn't resolved? A real implementation or assessment scenario helps most.
+    validations:
+      required: false
+  - type: textarea
+    id: tier-impact
+    attributes:
+      label: Tier impact
+      description: Would the change you're raising move any implementer in or out of the Compliant tier? Say so either way if you can.
+    validations:
+      required: false
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed direction (optional)
+      description: If you have one. A rough sketch is fine - you don't need a finished PR.
+    validations:
+      required: false
+  - type: dropdown
+    id: perspective
+    attributes:
+      label: Your perspective
+      description: Helps us weigh the feedback. Optional.
+      options:
+        - Prefer not to say
+        - Content owner / publisher
+        - AI agent / platform operator
+        - Intermediary (CDN, marketplace, affiliate or ad network, attribution vendor)
+        - Telemetry consumer / operator
+        - Implementer / SDK author
+        - Standards / policy
+        - Other
+    validations:
+      required: false
