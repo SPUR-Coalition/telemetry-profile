@@ -26,7 +26,7 @@ uv run validate.py
 
 ## How a fixture is assessed
 
-Each fixture is a Content Telemetry document - a session document or a standalone event. The runner checks Retrieval conformance (standard, section 5.7.1): every event has `type` and `timestamp`, every content event carries at least one of `content_url` or `content_id`, and every `content_retrieved` event carries `source_role`.
+Each fixture is a Content Telemetry document - a session document or a standalone event. The runner first rejects documents a conforming v1 consumer must reject - a non-v1 `schema_version` (standard, section 5.7.4) or a withdrawn `content_displayed` event (standard, section 12.1) - then checks Retrieval conformance (standard, section 5.7.1): every event has `type` and `timestamp`, every content event carries at least one of `content_url` or `content_id`, and every `content_retrieved` event carries `source_role`.
 
 Retrieval is the standard's least-demanding conformance level, and Grounding and Citation are cumulative on it. Passing Retrieval is therefore necessary and sufficient for the standard-conformance component of this profile.
 

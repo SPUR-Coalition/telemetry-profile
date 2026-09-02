@@ -17,7 +17,7 @@
       "type": "content_grounded",
       "timestamp": "2026-05-22T10:00:02Z",
       "content_url": "https://www.example-news.com/money/energy-tariffs",
-      "data": { "scope": "session", "cached": false, "tokens_ingested": 2800 }
+      "data": { "scope": "session", "cached": false, "chars_ingested": 11200, "tokens_ingested": 2800 }
     },
     {
       "type": "turn_started",

@@ -25,6 +25,14 @@
       "enum": ["real_time", "batch"],
       "description": "Optional required delivery cadence (profile, section 5.3). Real-time is the SPUR default; a licence MAY require batch where that is the agreed mode."
     },
+    "coverage": {
+      "type": "object",
+      "description": "Optional per-event-type coverage demand: a map from event type (e.g. 'content_retrieved') to one of the standard's coverage modes (standard, section 5.7.6). The SPUR profile requires 'complete' coverage by default; 'sampled' appears here only where this licence - the specific commercial agreement the profile anticipates (profile, section 5.2) - accepts it, and the licence states the sampling rule. The licence is the governing terms, so no terms_ref indirection is needed: a mode declared here binds the reporting Client for content under this licence.",
+      "additionalProperties": {
+        "type": "string",
+        "enum": ["complete", "sampled", "aggregated", "selected"]
+      }
+    },
     "content_id_scheme": {
       "type": "string",
       "description": "Optional declaration of the content_id scheme used by this publisher (e.g. 'doi', 'iscc', 'isbn', 'catalogue'), so the Client populates content_id correctly (standard, section 4.5)."

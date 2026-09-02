@@ -107,7 +107,7 @@ An implementer assessed as SPUR Compliant MUST meet every requirement below.
 
 ### 5.1 Conformance to the standard
 
-The implementer MUST be a conforming emitter to the Content Telemetry Specification at any conformance level - Retrieval, Grounding, or Citation. Conformance is verified against the standard's reference test suite (standard, section 5.7).
+The implementer MUST be a conforming emitter to the Content Telemetry Specification at any conformance level - Retrieval, Grounding, or Citation. Conformance is verified against the standard's JSON Schemas (standard, Annex A) and its reference test suite for the application-layer conformance rules (standard, section 5.7.5).
 
 A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting retrieval, grounding, and citation qualifies at the Citation level; presentation and engagement events are optional lifecycle signals under the standard. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
 
@@ -115,9 +115,9 @@ A CDN reporting fetch events from edge servers qualifies at the Retrieval level.
 
 Telemetry MUST be delivered at event granularity. Each fetched, grounded, cited, presented, or engaged content piece is reported as a discrete event, with the fields the standard requires at the implementer's conformance level.
 
-Aggregated reporting - summaries, counts, or rollups that collapse multiple events into a single record - does not satisfy this requirement. In the standard's coverage vocabulary (standard, section 5.7.6), the `aggregated` mode does not meet this profile. Aggregation, where useful, is performed by the receiving party on event-level input.
+Aggregated reporting - summaries, counts, or rollups that collapse multiple events into a single record - does not satisfy this requirement; in the standard's coverage vocabulary this is the `aggregated` mode. Aggregation, where useful, is performed by the receiving party on event-level input.
 
-Within the scope of the relationship it reports under, the implementer MUST report every qualifying occurrence it observes: `complete` coverage in the standard's terms (standard, section 5.7.6), for every event type at its conformance level. Selective reporting - the standard's `selected` mode - does not satisfy this requirement. A publisher MAY accept sampling (the standard's `sampled` mode, under its stated sampling rule) in a specific commercial agreement, as with delivery cadence in section 5.3. The implementer SHOULD declare its coverage machine-readably in its manifest (`telemetry.coverage`; standard, section 8.5). Whether reporting in fact met the declared coverage is assessed as an operational requirement (section 6).
+Within the scope of the relationship it reports under, the implementer MUST report every qualifying occurrence it observes: `complete` coverage in the standard's terms (standard, section 5.7.6), for every event type it emits - including the optional presentation and engagement lifecycle signals, when the implementer emits them. Selective reporting - the standard's `selected` mode - does not satisfy this requirement. A publisher MAY accept sampling (the standard's `sampled` mode, under its stated sampling rule) in a specific commercial agreement, as with delivery cadence in section 5.3. The implementer SHOULD declare its coverage machine-readably in its manifest (`telemetry.coverage`; standard, section 8.5). Whether reporting in fact met the declared coverage is assessed as an operational requirement (section 6).
 
 ### 5.3 Real-time delivery
 
@@ -160,10 +160,10 @@ The consumer MUST be capable of delivering each publisher's events to a destinat
 
 An implementer is assessed as SPUR Compliant when it meets every requirement in section 5 that applies to it: an emitter against sections 5.1 through 5.4, a telemetry consumer against section 5.5. Assessment has two parts:
 
-1. **Technical conformance** - verified against the standard's reference test suite, for the conformance level an emitter advertises (5.1) or against the standard's telemetry-consumer rules for a consumer (5.5.1). An objective, repeatable check.
+1. **Technical conformance** - verified against the standard's JSON Schemas and reference test suite, for the conformance level an emitter advertises (5.1), or against the standard's telemetry-consumer rules for a consumer (5.5.1). An objective, repeatable check.
 2. **Operational requirements** - the emitter delivery requirements (sections 5.2 through 5.4) and the consumer resolution, isolation, and onward-delivery requirements (sections 5.5.2 and 5.5.3), verified by inspection of the implementer's pipeline and by attestation.
 
-The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, coverage, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately. The standard itself notes that whether reporting met its declared coverage is answered by verification mechanisms outside core (standard, section 5.7.6); this profile's operational assessment is such a mechanism.
+The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, coverage, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately. The standard itself notes that whether reporting met its declared coverage is answered by verification mechanisms outside core; this profile's operational assessment is such a mechanism.
 
 Assessment is self-attested in this preview version. An independent audit programme is anticipated; the profile will be revised to require opt-in to it once available.
 
