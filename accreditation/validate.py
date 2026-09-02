@@ -31,7 +31,7 @@ CONTENT_EVENTS = {
     "content_retrieved",
     "content_grounded",
     "content_cited",
-    "content_displayed",
+    "content_presented",
     "content_engaged",
 }
 VALID_TIERS = ("compliant",)

@@ -50,7 +50,7 @@ Content Telemetry consumers tolerate unknown fields, so these annotations do not
 | `retrieval-standalone-edge` | Compliant | Standalone CDN retrieval event |
 | `retrieval-session-edge` | Compliant | Session of retrieval events only |
 | `grounding-intent-privacy` | Compliant | Grounding-conformant session - the profile is agnostic to privacy_level |
-| `citation-full-lifecycle` | Compliant | Citation plus optional display and engagement signals |
+| `citation-full-lifecycle` | Compliant | Citation plus optional presentation and engagement signals |
 | `retrieval-missing-source-role` | No tier | Retrieval baseline fails on a missing field |
 | `retrieval-missing-content-identifier` | No tier | Retrieval baseline fails - no content identifier |
 

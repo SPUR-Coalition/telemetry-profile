@@ -2,10 +2,10 @@
 
 Publisher-facing requirements for the Content Telemetry standard.
 
-**Version:** 0.1
+**Version:** 0.2
 **Status:** Preview
-**Last updated:** 2026-06-11
-**Constrains:** Content Telemetry Specification, version 0.1
+**Last updated:** 2026-09-02
+**Constrains:** Content Telemetry Specification, version 1.0
 
 ## Contents
 
@@ -51,11 +51,11 @@ This document does not specify:
 
 | Reference | Description |
 |-----------|-------------|
-| Content Telemetry Specification, version 0.1 | The telemetry wire format this profile constrains. <https://github.com/SPUR-Coalition/telemetry> |
+| Content Telemetry Specification, version 1.0 | The telemetry wire format this profile constrains. <https://github.com/SPUR-Coalition/telemetry> |
 | RFC 2119 | Key words for use in RFCs to indicate requirement levels |
 | RFC 8174 | Ambiguity of uppercase vs lowercase in RFC 2119 key words |
 
-This profile constrains a fixed version of the Content Telemetry Specification. Where this document refers to "the standard", it means version 0.1 as cited above. Adoption of a later standard version is a revision of this profile (section 8).
+This profile constrains a fixed version of the Content Telemetry Specification. Where this document refers to "the standard", it means version 1.0 as cited above. Adoption of a later standard version is a revision of this profile (section 8).
 
 ## 3. Terms and definitions
 
@@ -95,7 +95,7 @@ destination chosen by a publisher to receive telemetry about that publisher's co
 
 The standard defines the wire format. This profile selects from it and adds delivery requirements.
 
-The standard defines three conformance levels - Retrieval, Grounding, and Citation (standard, section 5.7) - and a privacy mechanism with four levels (standard, section 5.5). The standard makes no conformance level and no privacy level mandatory for any relationship.
+The standard defines three conformance levels - Retrieval, Grounding, and Citation (standard, section 5.7) - and a privacy mechanism with four levels (standard, section 5.5). The standard makes no conformance level and no privacy level mandatory for any relationship. The standard also separates conformance from coverage: a conformance level proves what an emitter can report, and reporting coverage is a distinct, explicit declaration in one of four modes (standard, section 5.7.6). This profile selects the `complete` mode as its default requirement (section 5.2).
 
 This profile builds on the standard's mechanisms without changing them. An implementer that meets this profile's requirements is conforming to the standard. An implementer can conform to the standard without engaging with this profile at all.
 
@@ -109,15 +109,15 @@ An implementer assessed as SPUR Compliant MUST meet every requirement below.
 
 The implementer MUST be a conforming emitter to the Content Telemetry Specification at any conformance level - Retrieval, Grounding, or Citation. Conformance is verified against the standard's reference test suite (standard, section 5.7).
 
-A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting retrieval, grounding, and citation qualifies at the Citation level; display and engagement events are optional lifecycle signals under the standard. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
+A CDN reporting fetch events from edge servers qualifies at the Retrieval level. An AI platform reporting retrieval, grounding, and citation qualifies at the Citation level; presentation and engagement events are optional lifecycle signals under the standard. Both are SPUR Compliant under this profile; the profile makes no distinction between conformance levels.
 
 ### 5.2 Event-level delivery
 
-Telemetry MUST be delivered at event granularity. Each fetched, grounded, cited, displayed, or engaged content piece is reported as a discrete event, with the fields the standard requires at the implementer's conformance level.
+Telemetry MUST be delivered at event granularity. Each fetched, grounded, cited, presented, or engaged content piece is reported as a discrete event, with the fields the standard requires at the implementer's conformance level.
 
-Aggregated reporting - summaries, counts, or rollups that collapse multiple events into a single record - does not satisfy this requirement. Aggregation, where useful, is performed by the receiving party on event-level input.
+Aggregated reporting - summaries, counts, or rollups that collapse multiple events into a single record - does not satisfy this requirement. In the standard's coverage vocabulary (standard, section 5.7.6), the `aggregated` mode does not meet this profile. Aggregation, where useful, is performed by the receiving party on event-level input.
 
-Within the scope of the relationship it reports under, the implementer MUST report every qualifying event it observes. Selective reporting - emitting events for some sessions or content while omitting others in the same scope - does not satisfy this requirement. A publisher MAY accept sampling in a specific commercial agreement, as with delivery cadence in section 5.3. Completeness is assessed as an operational requirement (section 6).
+Within the scope of the relationship it reports under, the implementer MUST report every qualifying occurrence it observes: `complete` coverage in the standard's terms (standard, section 5.7.6), for every event type at its conformance level. Selective reporting - the standard's `selected` mode - does not satisfy this requirement. A publisher MAY accept sampling (the standard's `sampled` mode, under its stated sampling rule) in a specific commercial agreement, as with delivery cadence in section 5.3. The implementer SHOULD declare its coverage machine-readably in its manifest (`telemetry.coverage`; standard, section 8.5). Whether reporting in fact met the declared coverage is assessed as an operational requirement (section 6).
 
 ### 5.3 Real-time delivery
 
@@ -142,7 +142,7 @@ Sections 5.1 through 5.4 govern emitters. A telemetry consumer - a party that re
 
 #### 5.5.1 Conformance to the standard
 
-The consumer MUST meet the telemetry-consumer conformance rules of the Content Telemetry Specification (standard, section 5.7.4): accept any session with a compatible schema version, tolerate unknown fields and events from any conformance level, and accept the standard's delivery formats, reconstructing sessions from standalone events. The consumer MUST also strip privacy-violating fields rather than reject the document carrying them; the standard recommends this behaviour (standard, section 5.7.5) and this profile makes it a requirement.
+The consumer MUST meet the telemetry-consumer conformance rules of the Content Telemetry Specification (standard, section 5.7.4): accept any document with a compatible schema version (same major version, under the standard's minor-version rules), tolerate unknown fields and events from any conformance level, and accept the session-document, standalone-event, and event-batch delivery formats, reconstructing sessions from standalone events and event batches where needed. The consumer MUST also strip privacy-violating fields rather than reject the document carrying them; the standard recommends this behaviour (standard, section 5.7.5) and this profile makes it a requirement.
 
 #### 5.5.2 Publisher resolution and isolation
 
@@ -163,7 +163,7 @@ An implementer is assessed as SPUR Compliant when it meets every requirement in 
 1. **Technical conformance** - verified against the standard's reference test suite, for the conformance level an emitter advertises (5.1) or against the standard's telemetry-consumer rules for a consumer (5.5.1). An objective, repeatable check.
 2. **Operational requirements** - the emitter delivery requirements (sections 5.2 through 5.4) and the consumer resolution, isolation, and onward-delivery requirements (sections 5.5.2 and 5.5.3), verified by inspection of the implementer's pipeline and by attestation.
 
-The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, completeness, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately.
+The [`accreditation/`](./accreditation/) directory holds example fixtures: telemetry documents that do and do not satisfy the standard-conformance component of this profile. Operational requirements - cadence, granularity, coverage, endpoint configuration, and publisher isolation - cannot be fixture-tested and are assessed separately. The standard itself notes that whether reporting met its declared coverage is answered by verification mechanisms outside core (standard, section 5.7.6); this profile's operational assessment is such a mechanism.
 
 Assessment is self-attested in this preview version. An independent audit programme is anticipated; the profile will be revised to require opt-in to it once available.
 

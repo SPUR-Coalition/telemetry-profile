@@ -21,7 +21,7 @@ The standard defines the wire format and stays free of any one community's requi
 | Requirement | Means |
 |-------------|-------|
 | Conformance to the standard | Conforming emitter at Retrieval, Grounding, or Citation level |
-| Event-level delivery | Discrete events per fetch / grounding / citation / display / engagement - no aggregation, no sampling |
+| Event-level delivery | Discrete events per fetch / grounding / citation / presentation / engagement, at complete coverage - no aggregation, no sampling |
 | Real-time delivery | Events dispatched as they occur; alternative cadence by per-publisher negotiation |
 | Publisher-designated endpoint | Telemetry routed to a destination the publisher chooses |
 
@@ -31,4 +31,4 @@ See [PROFILE.md](./PROFILE.md) for the full definitions.
 
 ## Status
 
-Preview (v0.1). Constrains Content Telemetry v0.1. Requirements may change before 1.0.
+Preview (v0.2). Constrains Content Telemetry v1.0. Requirements may change before 1.0.
