@@ -13,9 +13,9 @@ jobs:
     name: Accreditation fixture suite
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Run accreditation fixture suite
@@ -26,15 +26,15 @@ jobs:
     name: Fixtures against the standard's schemas
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Check out the standard at the constrained version
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: SPUR-Coalition/telemetry
           ref: v1.0
           path: standard
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Install the standard's validator dependency
