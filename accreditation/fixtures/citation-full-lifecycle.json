@@ -1,8 +1,8 @@
 {
-  "_test_description": "Citation emitter fixture with optional display and engagement lifecycle signals. Meets Retrieval conformance (the profile's standard-conformance floor). Assessed Compliant.",
+  "_test_description": "Citation emitter fixture with optional presentation and engagement lifecycle signals. Meets Retrieval conformance (the profile's standard-conformance floor). Assessed Compliant.",
   "_test_expected_tier": "compliant",
   "document_type": "session",
-  "schema_version": "0.1",
+  "schema_version": "1.0",
   "session_id": "a1b2c3d4-0009-4a00-8000-000000000009",
   "agent_id": "research-assistant-v4",
   "started_at": "2026-05-22T09:00:00Z",
@@ -25,21 +25,26 @@
       "type": "content_grounded",
       "timestamp": "2026-05-22T09:00:02Z",
       "content_url": "https://www.example-news.com/money/energy-tariffs",
-      "data": { "scope": "session", "cached": false, "tokens_ingested": 3100 }
+      "data": { "scope": "session", "cached": false, "chars_ingested": 12400, "tokens_ingested": 3100 }
     },
     {
+      "id": "770e8400-e29b-41d4-a716-446655440910",
       "type": "content_cited",
       "timestamp": "2026-05-22T09:00:05Z",
       "turn_id": "1",
+      "output_id": "response:1",
       "content_url": "https://www.example-news.com/money/energy-tariffs",
       "data": { "citation_type": "paraphrase", "position": "primary" }
     },
     {
-      "type": "content_displayed",
+      "id": "770e8400-e29b-41d4-a716-446655440911",
+      "type": "content_presented",
       "timestamp": "2026-05-22T09:00:05Z",
       "turn_id": "1",
+      "output_id": "response:1",
+      "citation_id": "770e8400-e29b-41d4-a716-446655440910",
       "content_url": "https://www.example-news.com/money/energy-tariffs",
-      "data": { "display_type": "link" }
+      "data": { "presentation_kind": "source_reference", "presentation_type": "link" }
     },
     {
       "type": "turn_completed",
@@ -51,6 +56,7 @@
       "type": "content_engaged",
       "timestamp": "2026-05-22T09:02:00Z",
       "turn_id": "1",
+      "presentation_id": "770e8400-e29b-41d4-a716-446655440911",
       "content_url": "https://www.example-news.com/money/energy-tariffs",
       "data": { "engagement_type": "link_click" }
     }

@@ -31,9 +31,10 @@ CONTENT_EVENTS = {
     "content_retrieved",
     "content_grounded",
     "content_cited",
-    "content_displayed",
+    "content_presented",
     "content_engaged",
 }
+LEGACY_EVENT_TYPES = {"content_displayed"}
 VALID_TIERS = ("compliant",)
 
 
@@ -43,6 +44,31 @@ def events(doc):
         event = doc.get("event")
         return [event] if event else []
     return doc.get("events", []) or []
+
+
+def check_document(doc):
+    """Document-level checks: the v1 wire version and withdrawn event types.
+
+    A v1 consumer rejects documents declaring "0.1" (standard, section 5.7.4),
+    and v1 replaces content_displayed with content_presented (standard,
+    section 12.1). A document a conforming consumer must reject cannot be
+    assessed Compliant.
+    """
+    fails = []
+    version = doc.get("schema_version")
+    if not isinstance(version, str) or not version.startswith("1."):
+        fails.append(
+            f"document: schema_version {version!r} is not a v1 version; "
+            "a v1 consumer rejects this document"
+        )
+    for i, event in enumerate(events(doc)):
+        etype = event.get("type")
+        if etype in LEGACY_EVENT_TYPES:
+            fails.append(
+                f"event[{i}]: {etype!r} is a withdrawn v0.1 event type; "
+                "v1 replaces content_displayed with content_presented"
+            )
+    return fails
 
 
 def check_retrieval(doc):
@@ -68,7 +94,7 @@ def check_retrieval(doc):
 
 def assess(doc):
     """Return (tier or None, blocking reasons) for a document."""
-    fails = check_retrieval(doc)
+    fails = check_document(doc) + check_retrieval(doc)
     if not fails:
         return "compliant", []
     return None, fails

@@ -21,3 +21,23 @@ jobs:
       - name: Run accreditation fixture suite
         run: python3 validate.py
         working-directory: accreditation
+
+  schema-validation:
+    name: Fixtures against the standard's schemas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out the standard at the constrained version
+        uses: actions/checkout@v4
+        with:
+          repository: SPUR-Coalition/telemetry
+          ref: v1.0
+          path: standard
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the standard's validator dependency
+        run: pip install "jsonschema[format-nongpl]"
+      - name: Validate fixtures against the standard's schemas
+        run: python3 accreditation/validate_schemas.py standard

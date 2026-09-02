@@ -14,7 +14,7 @@ The division of labour:
 
 | Layer | Scope | Carries |
 |-------|-------|---------|
-| Licensing declaration (e.g. RSL `<reporting>`) | Per-licence | The **demand**: minimum conformance level, privacy floor, cadence |
+| Licensing declaration (e.g. RSL `<reporting>`) | Per-licence | The **demand**: minimum conformance level, privacy floor, cadence, coverage mode |
 | `/.well-known/content-telemetry.json` manifest | Per-domain | The **transport of record**: signing keys, claimed domains, endpoint |
 | This profile | The rules | What "conforming" means, how it is assessed |
 

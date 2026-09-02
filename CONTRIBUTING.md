@@ -21,7 +21,7 @@ The profile's requirements affect every accredited implementer. Before submittin
 
 ## Adopting a new standard version
 
-This profile constrains a fixed version of the Content Telemetry standard (PROFILE.md section 2). Adopting a later standard version is a revision: open an issue, update the section 2 reference, and publish a new profile version.
+This profile constrains a fixed version of the Content Telemetry standard (PROFILE.md section 2). Adopting a later standard version is a revision: open an issue, update every site that pins the standard version - the PROFILE.md header and section 2 reference, the README status line, the accreditation fixtures' `schema_version`, and the standard checkout in the CI workflow - and publish a new profile version.
 
 ## Conventions
 
