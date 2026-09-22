@@ -1,0 +1,583 @@
+[
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-reconciles",
+    "expected_findings": []
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": []
+    },
+    "name": "retrieval-missing",
+    "expected_findings": [
+      "missing"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        },
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000102",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000002",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-extra",
+    "expected_findings": [
+      "extra"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/two",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-wrong-content",
+    "expected_findings": [
+      "content_mismatch"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        },
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-duplicate",
+    "expected_findings": [
+      "duplicate_report"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "terms:other",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-wrong-terms",
+    "expected_findings": [
+      "reference_mismatch"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:other",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-wrong-identity",
+    "expected_findings": [
+      "identity_mismatch"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": false,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-unverified-signature",
+    "expected_findings": [
+      "signature_unverified"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "index",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-wrong-role",
+    "expected_findings": [
+      "source_role"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:01:00Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-late-occurrence-time",
+    "expected_findings": [
+      "timestamp_mismatch"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "retrieval-no-correlation",
+    "expected_findings": [
+      "extra",
+      "missing",
+      "report_id"
+    ]
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      },
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000002",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1"
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        },
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000102",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000002",
+          "content_url": "https://publisher.example/article/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          }
+        }
+      ]
+    },
+    "name": "repeated-url-distinct-retrievals",
+    "expected_findings": []
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "content_id": "catalogue:one",
+        "content_id_verified": true
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/canonical/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          },
+          "content_id": "catalogue:one"
+        }
+      ]
+    },
+    "name": "canonical-url-verified-content-id",
+    "expected_findings": []
+  },
+  {
+    "publisher_log": [
+      {
+        "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+        "content_url": "https://publisher.example/article/one",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "agent_id": "agent:test",
+        "signature_valid": true,
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "content_id": "catalogue:one",
+        "content_id_verified": false
+      }
+    ],
+    "report": {
+      "schema_version": "1.0",
+      "session_id": "770e8400-e29b-41d4-a716-000000000999",
+      "agent_id": "agent:test",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "started_at": "2026-09-15T10:00:00Z",
+      "events": [
+        {
+          "id": "770e8400-e29b-41d4-a716-000000000101",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "content_telemetry_id": "770e8400-e29b-41d4-a716-000000000001",
+          "content_url": "https://publisher.example/canonical/one",
+          "license_ref": "https://publisher.example/licences/test-v1",
+          "terms_ref": "https://publisher.example/terms/reporting-v1",
+          "data": {
+            "media_type": "text"
+          },
+          "content_id": "catalogue:one"
+        }
+      ]
+    },
+    "name": "canonical-url-unverified-content-id",
+    "expected_findings": [
+      "content_mismatch"
+    ]
+  }
+]

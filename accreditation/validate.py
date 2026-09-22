@@ -1,26 +1,13 @@
 #!/usr/bin/env python3
-"""Accreditation assessment for the SPUR Content Telemetry Profile.
+"""Retrieval baseline regression fixtures for the SPUR Content Telemetry Profile.
 
-This profile defines a single tier - Compliant - whose technical requirement
-(PROFILE.md section 5.1) is that the implementer is a conforming emitter to
-the Content Telemetry Specification at any conformance level. The cheapest level
-to satisfy is Retrieval (standard, section 5.7.1), and Grounding and
-Citation are cumulative on it. Checking Retrieval conformance is therefore
-necessary and sufficient for the standard-conformance component of this
-profile's assessment.
+The original fixtures retain their historical ``compliant`` / None labels.
+Those labels concern this baseline only. The accreditation-design draft adds
+role-specific requirements and independent operational assessment; this runner
+neither checks all of them nor awards accreditation.
 
-The delivery requirements - event-level granularity, real-time delivery, and
-publisher-designated endpoint (PROFILE.md sections 5.2 through 5.4) - are
-properties of the implementer's reporting pipeline and cannot be checked from
-a single telemetry document. They are assessed separately by attestation and
-endpoint inspection.
-
-No external dependencies. Validating a document against the JSON Schema is the
-standard repository's test suite; this runner assumes fixtures are well-formed
-Content Telemetry documents and assesses whether they reach the Compliant tier.
-
-Usage:
-    python3 validate.py
+No external dependencies. Full schema and application-layer conformance is
+checked separately against the pinned standard. Usage: python3 validate.py
 """
 
 import json
@@ -93,7 +80,7 @@ def check_retrieval(doc):
 
 
 def assess(doc):
-    """Return (tier or None, blocking reasons) for a document."""
+    """Return the historical baseline label and blocking reasons for a document."""
     fails = check_document(doc) + check_retrieval(doc)
     if not fails:
         return "compliant", []
@@ -110,7 +97,7 @@ def main():
         print(f"no fixtures found in {fixtures_dir}", file=sys.stderr)
         return 1
 
-    print("SPUR Content Telemetry Profile - accreditation fixture suite\n")
+    print("SPUR Content Telemetry Profile - Retrieval baseline fixtures (not an award)\n")
     passed = failed = 0
     for path in files:
         try:
@@ -131,27 +118,25 @@ def main():
             )
             failed += 1
             continue
-        description = doc.get("_test_description", "")
         assessed, reasons = assess(doc)
+        expected_label = "Retrieval pass" if expected else "Retrieval failure"
+        assessed_label = "Retrieval pass" if assessed else "Retrieval failure"
         if assessed == expected:
             passed += 1
             print(f"PASS  {path.name}")
-            print(f"      {expected or 'no tier'} - {description}\n")
+            print(f"      expected {expected_label}\n")
         else:
             failed += 1
             print(f"FAIL  {path.name}")
             print(
-                f"      expected {expected or 'no tier'}, "
-                f"assessed {assessed or 'no tier'}"
+                f"      expected {expected_label}, got {assessed_label}"
             )
-            if description:
-                print(f"      {description}")
             if reasons:
                 print(f"      blocked by:")
                 for reason in reasons:
                     print(f"        - {reason}")
             elif expected is None and assessed is not None:
-                print(f"      expected no tier, but the document qualifies for {assessed}")
+                print("      expected the Retrieval check to fail")
             print()
 
     total = passed + failed

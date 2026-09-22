@@ -1,0 +1,114 @@
+{
+  "case_type": "carriage",
+  "description": "Negative vector: carriage extension dropped. Expected findings: result.reporting_changed.",
+  "declarations": [
+    {
+      "content_url": "https://publisher_a.example/article/1",
+      "content_id": "a:article:1",
+      "license_ref": "licence:a:2026:1",
+      "terms_ref": "https://publisher_a.example/terms/v1",
+      "reporting_agent_id": "test-agent",
+      "reporting": {
+        "conformance_level": "retrieval",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher_a.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete"
+        },
+        "content_id_scheme": "catalogue",
+        "publisher_extension": {
+          "revision": 1,
+          "labels": [
+            "preserve",
+            "unchanged"
+          ]
+        }
+      },
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "endpoint": "https://publisher_a.example/licence-events",
+      "profile": "https://contenttelemetry.org/profiles/spur"
+    },
+    {
+      "content_url": "https://publisher_b.example/article/2",
+      "content_id": "b:article:2",
+      "license_ref": "licence:b:2026:1",
+      "terms_ref": "https://publisher_b.example/terms/v1",
+      "reporting_agent_id": "test-agent",
+      "reporting": {
+        "conformance_level": "retrieval",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher_b.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete"
+        },
+        "content_id_scheme": "doi",
+        "publisher_extension": {
+          "revision": 1,
+          "labels": [
+            "preserve",
+            "unchanged"
+          ]
+        }
+      },
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "endpoint": "https://publisher_b.example/licence-events",
+      "profile": "https://contenttelemetry.org/profiles/spur"
+    }
+  ],
+  "results": [
+    {
+      "content_url": "https://publisher_a.example/article/1",
+      "content_id": "a:article:1",
+      "license_ref": "licence:a:2026:1",
+      "terms_ref": "https://publisher_a.example/terms/v1",
+      "reporting_agent_id": "test-agent",
+      "reporting": {
+        "conformance_level": "retrieval",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher_a.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete"
+        },
+        "content_id_scheme": "catalogue"
+      },
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "00000000-0000-4000-8000-000000000065",
+      "endpoint": "https://publisher_a.example/licence-events",
+      "profile": "https://contenttelemetry.org/profiles/spur"
+    },
+    {
+      "content_url": "https://publisher_b.example/article/2",
+      "content_id": "b:article:2",
+      "license_ref": "licence:b:2026:1",
+      "terms_ref": "https://publisher_b.example/terms/v1",
+      "reporting_agent_id": "test-agent",
+      "reporting": {
+        "conformance_level": "retrieval",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher_b.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete"
+        },
+        "content_id_scheme": "doi",
+        "publisher_extension": {
+          "revision": 1,
+          "labels": [
+            "preserve",
+            "unchanged"
+          ]
+        }
+      },
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "00000000-0000-4000-8000-000000000066",
+      "endpoint": "https://publisher_b.example/licence-events",
+      "profile": "https://contenttelemetry.org/profiles/spur"
+    }
+  ],
+  "expected_errors": [
+    "result.reporting_changed"
+  ]
+}

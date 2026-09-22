@@ -1,0 +1,111 @@
+{
+  "case_type": "publisher_access",
+  "description": "Export requiring operator assistance is not self-service.",
+  "default_destination": "https://grounding.example/publishers/a",
+  "publisher_destination": null,
+  "observed_destination": "https://grounding.example/publishers/a",
+  "publisher_agreed_hosted": true,
+  "self_service": false,
+  "expected_documents": [
+    {
+      "document_type": "event",
+      "schema_version": "1.0",
+      "manifest_ref": "https://grounding.example/.well-known/content-telemetry.json",
+      "event": {
+        "content_url": "https://publisher_a.example/article/1",
+        "content_id": "a:article:1",
+        "license_ref": "licence:a:2026:1",
+        "terms_ref": "https://publisher_a.example/terms/v1",
+        "id": "00000000-0000-4000-8000-0000000003e8",
+        "type": "content_retrieved",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "source_role": "index",
+        "data": {
+          "media_type": "text",
+          "content_depth": "full",
+          "spur_agent_draft": {
+            "delivery_id": "00000000-0000-4000-8000-000000000065",
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+          }
+        }
+      }
+    },
+    {
+      "document_type": "event",
+      "schema_version": "1.0",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "event": {
+        "content_url": "https://publisher_a.example/article/1",
+        "content_id": "a:article:1",
+        "license_ref": "licence:a:2026:1",
+        "terms_ref": "https://publisher_a.example/terms/v1",
+        "id": "00000000-0000-4000-8000-0000000007d0",
+        "type": "content_retrieved",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "source_role": "agent",
+        "data": {
+          "media_type": "text",
+          "content_depth": "full",
+          "spur_agent_draft": {
+            "delivery_id": "00000000-0000-4000-8000-000000000065",
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+          }
+        }
+      },
+      "agent_id": "test-agent"
+    }
+  ],
+  "exported_documents": [
+    {
+      "document_type": "event",
+      "schema_version": "1.0",
+      "manifest_ref": "https://grounding.example/.well-known/content-telemetry.json",
+      "event": {
+        "content_url": "https://publisher_a.example/article/1",
+        "content_id": "a:article:1",
+        "license_ref": "licence:a:2026:1",
+        "terms_ref": "https://publisher_a.example/terms/v1",
+        "id": "00000000-0000-4000-8000-0000000003e8",
+        "type": "content_retrieved",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "source_role": "index",
+        "data": {
+          "media_type": "text",
+          "content_depth": "full",
+          "spur_agent_draft": {
+            "delivery_id": "00000000-0000-4000-8000-000000000065",
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+          }
+        }
+      }
+    },
+    {
+      "document_type": "event",
+      "schema_version": "1.0",
+      "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+      "event": {
+        "content_url": "https://publisher_a.example/article/1",
+        "content_id": "a:article:1",
+        "license_ref": "licence:a:2026:1",
+        "terms_ref": "https://publisher_a.example/terms/v1",
+        "id": "00000000-0000-4000-8000-0000000007d0",
+        "type": "content_retrieved",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "source_role": "agent",
+        "data": {
+          "media_type": "text",
+          "content_depth": "full",
+          "spur_agent_draft": {
+            "delivery_id": "00000000-0000-4000-8000-000000000065",
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+          }
+        }
+      },
+      "agent_id": "test-agent"
+    }
+  ],
+  "forwarded_documents": [],
+  "expected_errors": [
+    "access.self_service"
+  ]
+}

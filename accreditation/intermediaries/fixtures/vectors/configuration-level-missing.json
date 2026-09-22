@@ -1,0 +1,41 @@
+{
+  "case_type": "configuration",
+  "description": "Negative vector: configuration level missing. Expected findings: config.changed, config.conformance_level.",
+  "source": {
+    "conformance_level": "retrieval",
+    "privacy_level": "minimal",
+    "manifest": "https://publisher_a.example/.well-known/content-telemetry.json",
+    "delivery": "real_time",
+    "coverage": {
+      "content_retrieved": "complete"
+    },
+    "content_id_scheme": "catalogue",
+    "publisher_extension": {
+      "revision": 1,
+      "labels": [
+        "preserve",
+        "unchanged"
+      ]
+    }
+  },
+  "forwarded": {
+    "privacy_level": "minimal",
+    "manifest": "https://publisher_a.example/.well-known/content-telemetry.json",
+    "delivery": "real_time",
+    "coverage": {
+      "content_retrieved": "complete"
+    },
+    "content_id_scheme": "catalogue",
+    "publisher_extension": {
+      "revision": 1,
+      "labels": [
+        "preserve",
+        "unchanged"
+      ]
+    }
+  },
+  "expected_errors": [
+    "config.changed",
+    "config.conformance_level"
+  ]
+}

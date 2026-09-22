@@ -1,0 +1,171 @@
+{
+  "case_type": "reconciliation",
+  "description": "Negative vector: pair wrong reporting agent. Expected findings: agent.emitter.",
+  "deliveries": [
+    {
+      "content_url": "https://publisher_a.example/article/1",
+      "content_id": "a:article:1",
+      "license_ref": "licence:a:2026:1",
+      "terms_ref": "https://publisher_a.example/terms/v1",
+      "reporting_agent_id": "test-agent",
+      "reporting": {
+        "conformance_level": "retrieval",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher_a.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete"
+        },
+        "content_id_scheme": "catalogue",
+        "publisher_extension": {
+          "revision": 1,
+          "labels": [
+            "preserve",
+            "unchanged"
+          ]
+        }
+      },
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "00000000-0000-4000-8000-000000000065",
+      "endpoint": "https://publisher_a.example/licence-events",
+      "profile": "https://contenttelemetry.org/profiles/spur"
+    },
+    {
+      "content_url": "https://publisher_b.example/article/2",
+      "content_id": "b:article:2",
+      "license_ref": "licence:b:2026:1",
+      "terms_ref": "https://publisher_b.example/terms/v1",
+      "reporting_agent_id": "test-agent",
+      "reporting": {
+        "conformance_level": "retrieval",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher_b.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete"
+        },
+        "content_id_scheme": "doi",
+        "publisher_extension": {
+          "revision": 1,
+          "labels": [
+            "preserve",
+            "unchanged"
+          ]
+        }
+      },
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "00000000-0000-4000-8000-000000000066",
+      "endpoint": "https://publisher_b.example/licence-events",
+      "profile": "https://contenttelemetry.org/profiles/spur"
+    }
+  ],
+  "index_reports": [
+    {
+      "document": {
+        "document_type": "event",
+        "schema_version": "1.0",
+        "manifest_ref": "https://grounding.example/.well-known/content-telemetry.json",
+        "event": {
+          "content_url": "https://publisher_a.example/article/1",
+          "content_id": "a:article:1",
+          "license_ref": "licence:a:2026:1",
+          "terms_ref": "https://publisher_a.example/terms/v1",
+          "id": "00000000-0000-4000-8000-0000000003e8",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "index",
+          "data": {
+            "media_type": "text",
+            "content_depth": "full",
+            "spur_agent_draft": {
+              "delivery_id": "00000000-0000-4000-8000-000000000065",
+              "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "document": {
+        "document_type": "event",
+        "schema_version": "1.0",
+        "manifest_ref": "https://grounding.example/.well-known/content-telemetry.json",
+        "event": {
+          "content_url": "https://publisher_b.example/article/2",
+          "content_id": "b:article:2",
+          "license_ref": "licence:b:2026:1",
+          "terms_ref": "https://publisher_b.example/terms/v1",
+          "id": "00000000-0000-4000-8000-0000000003e9",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "index",
+          "data": {
+            "media_type": "text",
+            "content_depth": "full",
+            "spur_agent_draft": {
+              "delivery_id": "00000000-0000-4000-8000-000000000066",
+              "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "agent_reports": [
+    {
+      "document": {
+        "document_type": "event",
+        "schema_version": "1.0",
+        "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+        "event": {
+          "content_url": "https://publisher_a.example/article/1",
+          "content_id": "a:article:1",
+          "license_ref": "licence:a:2026:1",
+          "terms_ref": "https://publisher_a.example/terms/v1",
+          "id": "00000000-0000-4000-8000-0000000007d0",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "data": {
+            "media_type": "text",
+            "content_depth": "full",
+            "spur_agent_draft": {
+              "delivery_id": "00000000-0000-4000-8000-000000000065",
+              "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+            }
+          }
+        },
+        "agent_id": "another-agent"
+      }
+    },
+    {
+      "document": {
+        "document_type": "event",
+        "schema_version": "1.0",
+        "manifest_ref": "https://agent.example/.well-known/content-telemetry.json",
+        "event": {
+          "content_url": "https://publisher_b.example/article/2",
+          "content_id": "b:article:2",
+          "license_ref": "licence:b:2026:1",
+          "terms_ref": "https://publisher_b.example/terms/v1",
+          "id": "00000000-0000-4000-8000-0000000007d1",
+          "type": "content_retrieved",
+          "timestamp": "2026-09-15T10:00:01Z",
+          "source_role": "agent",
+          "data": {
+            "media_type": "text",
+            "content_depth": "full",
+            "spur_agent_draft": {
+              "delivery_id": "00000000-0000-4000-8000-000000000066",
+              "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json"
+            }
+          }
+        },
+        "agent_id": "test-agent"
+      }
+    }
+  ],
+  "expected_errors": [
+    "agent.emitter"
+  ]
+}

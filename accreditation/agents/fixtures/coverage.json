@@ -1,0 +1,1175 @@
+[
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-bounded-complete",
+    "expected_findings": []
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-omits-mediated-path",
+    "expected_findings": [
+      "scope_omission",
+      "inventory_mismatch"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-host-bypass",
+    "expected_findings": [
+      "scope_omission",
+      "unjustified_exclusion"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection."
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-missing-exclusion-evidence",
+    "expected_findings": [
+      "unjustified_exclusion"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time",
+      "selection": "only_successfully_reported"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-post-hoc-selection",
+    "expected_findings": [
+      "scope_shape"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-no-citation",
+    "expected_findings": [
+      "event_types",
+      "coverage_types"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "terms:other"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-wrong-terms",
+    "expected_findings": [
+      "coverage_terms"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-empty-scope-identity",
+    "expected_findings": [
+      "scope_identity"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "selected",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-selected",
+    "expected_findings": [
+      "coverage_mode"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "aggregated",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-aggregated",
+    "expected_findings": [
+      "coverage_mode"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "sampled",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-sampled",
+    "expected_findings": [
+      "coverage_mode"
+    ]
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited",
+        "content_presented"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_presented": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-optional-presentation",
+    "expected_findings": []
+  },
+  {
+    "scope_record": {
+      "scope_version": "draft-1",
+      "content_scope": "assessed-integration-v1",
+      "agent_id": "agent:test",
+      "service_version": "build:test-1",
+      "host_integration": "host:test-1",
+      "effective_at": "2026-09-15T00:00:00Z",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "included_paths": [
+        "direct_fetch",
+        "intermediary_search",
+        "cache_reuse",
+        "delegated_context"
+      ],
+      "excluded_paths": [
+        {
+          "path_id": "unrelated_host_process",
+          "reason": "Separate process cannot receive assessed work; verified by task routing inspection.",
+          "evidence_ref": "evidence:routing-1"
+        }
+      ],
+      "event_types": [
+        "content_retrieved",
+        "content_grounded",
+        "content_cited",
+        "content_presented"
+      ],
+      "consumer": "https://consumer.example/events",
+      "delivery": "real_time"
+    },
+    "assessor_inventory": [
+      {
+        "path_id": "direct_fetch",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "intermediary_search",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "cache_reuse",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "delegated_context",
+        "can_route_assessed_work": true,
+        "evidence_ref": "evidence:inventory-1"
+      },
+      {
+        "path_id": "unrelated_host_process",
+        "can_route_assessed_work": false,
+        "evidence_ref": "evidence:routing-1"
+      }
+    ],
+    "manifest": {
+      "schema_version": "1.0",
+      "id": "https://agent.example/.well-known/content-telemetry.json",
+      "roles": [
+        "agent"
+      ],
+      "operator": {
+        "name": "Test agent"
+      },
+      "telemetry": {
+        "endpoint": "https://consumer.example/events",
+        "conformance_level": "citation",
+        "coverage": {
+          "content_retrieved": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_grounded": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          },
+          "content_cited": {
+            "mode": "complete",
+            "terms_ref": "https://publisher.example/terms/reporting-v1"
+          }
+        }
+      }
+    },
+    "name": "coverage-optional-missing-declaration",
+    "expected_findings": [
+      "coverage_types"
+    ]
+  }
+]

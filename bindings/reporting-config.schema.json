@@ -13,7 +13,7 @@
     "privacy_level": {
       "type": "string",
       "enum": ["full", "summary", "intent", "minimal"],
-      "description": "Privacy floor: the minimum disclosure the licence requires (standard, section 5.5). Interpreted as a floor, not a ceiling - the Client MUST populate at least the fields this level permits, and MAY disclose more. The SPUR profile's floor is event-level retrieval with no query intent; 'minimal' expresses exactly that."
+      "description": "Privacy level selected by the licence's reporting condition (standard, section 5.5). The Client must satisfy the standard's required fields and must not disclose conversation-turn fields forbidden at the declared level. A permitted field is not automatically required. Additional disclosure obligations belong to the governing terms and must remain compatible with the applicable privacy configuration; an unmet condition is handled under the profile's refusal requirements. 'minimal' permits event-level reporting without query intent. This description is clarified in the accreditation consultation; the wire enum is unchanged."
     },
     "manifest": {
       "type": "string",

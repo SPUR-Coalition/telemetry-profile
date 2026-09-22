@@ -1,0 +1,199 @@
+[
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "declined"
+    },
+    "qualifying_acquisitions": 0,
+    "grounded": false,
+    "cited": false,
+    "name": "refusal-before-acquisition",
+    "expected_findings": []
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "acquired_unmet"
+    },
+    "qualifying_acquisitions": 1,
+    "grounded": false,
+    "cited": false,
+    "name": "refusal-unauthorised-acquire-and-record",
+    "expected_findings": [
+      "not_declined",
+      "acquired_despite_condition"
+    ],
+    "retrieval_reports": 1
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "declined"
+    },
+    "qualifying_acquisitions": 0,
+    "grounded": true,
+    "cited": false,
+    "name": "refusal-content-used",
+    "expected_findings": [
+      "used_despite_condition"
+    ]
+  },
+  {
+    "refusal_record": {
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "declined"
+    },
+    "qualifying_acquisitions": 0,
+    "grounded": false,
+    "cited": false,
+    "name": "refusal-condition-not-named",
+    "expected_findings": [
+      "refusal_record"
+    ]
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "acquired_recorded",
+      "authorisation_ref": "https://publisher.example/terms/recovery-v1"
+    },
+    "qualifying_acquisitions": 1,
+    "grounded": false,
+    "cited": false,
+    "name": "exception-authorised-acquisition",
+    "expected_findings": [],
+    "retrieval_reports": 1,
+    "authorisation": {
+      "terms_ref": "https://publisher.example/terms/recovery-v1",
+      "acquire_and_record": true,
+      "allow_use": false
+    }
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "acquired_recorded"
+    },
+    "qualifying_acquisitions": 1,
+    "grounded": false,
+    "cited": false,
+    "name": "exception-missing-authorisation-reference",
+    "expected_findings": [
+      "exception_reference"
+    ],
+    "retrieval_reports": 1,
+    "authorisation": {
+      "terms_ref": "https://publisher.example/terms/recovery-v1",
+      "acquire_and_record": true,
+      "allow_use": false
+    }
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "acquired_recorded",
+      "authorisation_ref": "https://publisher.example/terms/recovery-v1"
+    },
+    "qualifying_acquisitions": 1,
+    "grounded": false,
+    "cited": false,
+    "name": "exception-missing-retrieval-report",
+    "expected_findings": [
+      "retrieval_reporting"
+    ],
+    "retrieval_reports": 0,
+    "authorisation": {
+      "terms_ref": "https://publisher.example/terms/recovery-v1",
+      "acquire_and_record": true,
+      "allow_use": false
+    }
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "acquired_recorded",
+      "authorisation_ref": "https://publisher.example/terms/recovery-v1"
+    },
+    "qualifying_acquisitions": 1,
+    "grounded": true,
+    "cited": false,
+    "name": "exception-use-not-authorised",
+    "expected_findings": [
+      "used_despite_condition"
+    ],
+    "retrieval_reports": 1,
+    "authorisation": {
+      "terms_ref": "https://publisher.example/terms/recovery-v1",
+      "acquire_and_record": true,
+      "allow_use": false
+    }
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "acquired_recorded",
+      "authorisation_ref": "https://publisher.example/terms/recovery-v1"
+    },
+    "qualifying_acquisitions": 1,
+    "grounded": false,
+    "cited": false,
+    "name": "exception-cache-reuse-not-authorised",
+    "expected_findings": [
+      "used_despite_condition"
+    ],
+    "retrieval_reports": 1,
+    "authorisation": {
+      "terms_ref": "https://publisher.example/terms/recovery-v1",
+      "acquire_and_record": true,
+      "allow_use": false
+    },
+    "cache_reused": true
+  },
+  {
+    "refusal_record": {
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "content_url": "https://publisher.example/article/one",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "failed_capability": "consumer_unavailable",
+      "action": "acquired_recorded",
+      "authorisation_ref": "https://publisher.example/terms/recovery-v1"
+    },
+    "qualifying_acquisitions": 1,
+    "grounded": true,
+    "cited": false,
+    "name": "exception-authorised-use",
+    "expected_findings": [],
+    "retrieval_reports": 1,
+    "authorisation": {
+      "terms_ref": "https://publisher.example/terms/recovery-v1",
+      "acquire_and_record": true,
+      "allow_use": true
+    }
+  }
+]
