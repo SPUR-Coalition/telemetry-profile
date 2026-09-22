@@ -4,7 +4,7 @@
 > Telemetry Profile 0.2. Consultation has not opened. Participation, installing
 > a plugin or passing tests does not confer accreditation or use of the mark.
 
-**Draft:** 15 September 2026. **Status:** Review before publication.
+**Draft:** 15 September 2026. **Status:** Published for review; consultation not yet open.
 **Comment period:** Dates to be announced. **Proposed version:** 0.3-draft;
 published 0.2 remains in force until adoption.
 
