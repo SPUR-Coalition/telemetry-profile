@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   accreditation:
-    name: Accreditation fixture suite
+    name: Baseline and draft role fixtures
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -21,6 +21,10 @@ jobs:
       - name: Run accreditation fixture suite
         run: python3 validate.py
         working-directory: accreditation
+      - name: Run agent assessment vectors
+        run: python3 accreditation/agents/fixtures/run.py
+      - name: Run intermediary assessment vectors
+        run: python3 accreditation/intermediaries/fixtures/validate.py
 
   schema-validation:
     name: Fixtures against the standard's schemas
@@ -41,3 +45,5 @@ jobs:
         run: pip install "jsonschema[format-nongpl]"
       - name: Validate fixtures against the standard's schemas
         run: python3 accreditation/validate_schemas.py standard
+      - name: Validate positive role fixture wire artefacts
+        run: python3 accreditation/validate_role_schemas.py standard

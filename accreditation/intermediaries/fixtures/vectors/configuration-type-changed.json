@@ -1,0 +1,41 @@
+{
+  "case_type": "configuration",
+  "description": "Negative vector: configuration type changed. Expected findings: config.changed.",
+  "source": {
+    "conformance_level": "retrieval",
+    "privacy_level": "minimal",
+    "manifest": "https://publisher_a.example/.well-known/content-telemetry.json",
+    "delivery": "real_time",
+    "coverage": {
+      "content_retrieved": "complete"
+    },
+    "content_id_scheme": "catalogue",
+    "publisher_extension": {
+      "revision": 1,
+      "labels": [
+        "preserve",
+        "unchanged"
+      ]
+    }
+  },
+  "forwarded": {
+    "conformance_level": "retrieval",
+    "privacy_level": "minimal",
+    "manifest": "https://publisher_a.example/.well-known/content-telemetry.json",
+    "delivery": "real_time",
+    "coverage": {
+      "content_retrieved": "complete"
+    },
+    "content_id_scheme": "catalogue",
+    "publisher_extension": {
+      "revision": true,
+      "labels": [
+        "preserve",
+        "unchanged"
+      ]
+    }
+  },
+  "expected_errors": [
+    "config.changed"
+  ]
+}

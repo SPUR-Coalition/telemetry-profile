@@ -1,0 +1,1351 @@
+[
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-carried-and-named",
+    "expected_findings": [],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-missing-name",
+    "expected_findings": [
+      "supplier_missing_or_wrong"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://other.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-wrong-name",
+    "expected_findings": [
+      "supplier_missing_or_wrong"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:other"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-wrong-delivery",
+    "expected_findings": [
+      "delivery_mismatch"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://grounding.example/search",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-rewrites-content",
+    "expected_findings": [
+      "item_mismatch"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-drops-unknown-config",
+    "expected_findings": [
+      "condition_changed"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "index"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-agent-claims-index",
+    "expected_findings": [
+      "agent_role"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-missing-agent-retrieval",
+    "expected_findings": [
+      "agent_event_types"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-citation-drops-terms",
+    "expected_findings": [
+      "item_mismatch"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "agent_fetched"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-wrong-provenance",
+    "expected_findings": [
+      "provenance"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      }
+    ],
+    "name": "intermediary-rewrites-endpoint",
+    "expected_findings": [
+      "endpoint_changed"
+    ],
+    "agent_endpoint_record": "https://other.example/events"
+  },
+  {
+    "result_record": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+      "delivery_id": "delivery:0001",
+      "endpoint": "https://publisher.example/telemetry",
+      "reporting": {
+        "conformance_level": "citation",
+        "privacy_level": "minimal",
+        "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+        "delivery": "real_time",
+        "coverage": {
+          "content_retrieved": "complete",
+          "content_grounded": "complete",
+          "content_cited": "complete"
+        },
+        "test_extension": {
+          "retain": "unchanged"
+        }
+      }
+    },
+    "agent_condition_record": {
+      "conformance_level": "citation",
+      "privacy_level": "minimal",
+      "manifest": "https://publisher.example/.well-known/content-telemetry.json",
+      "delivery": "real_time",
+      "coverage": {
+        "content_retrieved": "complete",
+        "content_grounded": "complete",
+        "content_cited": "complete"
+      },
+      "test_extension": {
+        "retain": "unchanged"
+      }
+    },
+    "index_event": {
+      "content_url": "https://publisher.example/article/one",
+      "content_id": "catalogue:one",
+      "license_ref": "https://publisher.example/licences/test-v1",
+      "terms_ref": "https://publisher.example/terms/reporting-v1",
+      "timestamp": "2026-09-15T10:00:01Z",
+      "data": {
+        "spur_agent_draft": {
+          "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+          "delivery_id": "delivery:0001"
+        },
+        "media_type": "text"
+      },
+      "type": "content_retrieved",
+      "source_role": "index"
+    },
+    "agent_events": [
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "scope": "turn",
+          "cached": false,
+          "provenance": "third_party_sourced"
+        },
+        "type": "content_grounded",
+        "turn_id": "turn:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "citation_type": "paraphrase"
+        },
+        "type": "content_cited",
+        "id": "770e8400-e29b-41d4-a716-000000000888",
+        "output_id": "answer:1"
+      },
+      {
+        "content_url": "https://publisher.example/article/one",
+        "content_id": "catalogue:one",
+        "license_ref": "https://publisher.example/licences/test-v1",
+        "terms_ref": "https://publisher.example/terms/reporting-v1",
+        "timestamp": "2026-09-15T10:00:01Z",
+        "data": {
+          "spur_agent_draft": {
+            "supplying_intermediary": "https://grounding.example/.well-known/content-telemetry.json",
+            "delivery_id": "delivery:0001"
+          },
+          "media_type": "text"
+        },
+        "type": "content_retrieved",
+        "source_role": "agent"
+      }
+    ],
+    "name": "intermediary-duplicate-agent-retrieval",
+    "expected_findings": [
+      "agent_event_types"
+    ],
+    "agent_endpoint_record": "https://publisher.example/telemetry"
+  }
+]

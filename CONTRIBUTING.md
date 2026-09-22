@@ -1,5 +1,22 @@
 # Contributing to the SPUR Content Telemetry Profile
 
+> **Consultation draft; not adopted.** [Status and review](CONSULTATION.md).
+
+## Accreditation consultation
+
+Once the consultation opens, a short implementation example or PoC question is
+enough to start. Maintainers can help identify the relevant requirement. Use
+issues for design questions and pull-request comments for wording. Follow-up pull requests should target the
+consultation branch until the programme is adopted.
+
+Maintainers link PoC findings to decisions to retain, amend, defer or delete
+requirements, update the affected fixtures and publish reasons before adoption.
+Describe the implementation scenario; use synthetic
+examples rather than credentials or confidential operational records. Public
+assessment summaries and reproducible tests belong here. Outreach lists,
+internal handoffs and provider-specific private evidence belong in programme
+working records outside this repository.
+
 ## What belongs here
 
 This repository contains the **profile** - the requirements for the Compliant tier and the SPUR conformance mark. It does not contain the telemetry wire format. Changes to event types, schema, or conformance levels belong in the [standard repository](https://github.com/SPUR-Coalition/telemetry).
@@ -7,12 +24,13 @@ This repository contains the **profile** - the requirements for the Compliant ti
 | File | Purpose |
 |------|---------|
 | [PROFILE.md](./PROFILE.md) | The normative profile |
-| [accreditation/](./accreditation/) | Example fixtures and assessment material |
+| [accreditation/](./accreditation/) | Role requirements, assessment procedures and example fixtures |
+| [CONSULTATION.md](./CONSULTATION.md) | Draft status, review questions, participation and decisions needed before adoption |
 | [bindings/](./bindings/) | How licensing layers (e.g. RSL) reference this profile |
 
 ## Proposing changes
 
-The profile's requirements affect every accredited implementer. Before submitting a PR:
+Before submitting a PR:
 
 1. Open an issue describing the change and its motivation (the **Profile feedback** template walks through the points below).
 2. State which requirement is affected and whether the change moves implementers in or out of the Compliant tier.
